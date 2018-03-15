@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /systemlyxdir/examples/thesis/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % in case somebody want to have the label "Equation"
@@ -793,13 +793,70 @@ filename "chapter-1.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch chapter-2
+\begin_inset Branch chapter-1
 status open
 
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "chapter-2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch chapter-2
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter-3.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch chapter-2
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter-4.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch chapter-2
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "chapter-5.lyx"
 
 \end_inset
 

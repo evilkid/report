@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /systemlyxdir/examples/thesis/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % in case somebody want to have the label "Equation"
@@ -62,7 +62,7 @@
 \end_preamble
 \options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
 \use_default_options true
-\master thesis.lyx
+\master /usr/share/lyx/examples/thesis/thesis.lyx
 \begin_modules
 customHeadersFooters
 \end_modules
@@ -295,70 +295,31 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-Title of next chapter
+Analysis and Specification
+\end_layout
+
+\begin_layout Section*
+Introduction
 \end_layout
 
 \begin_layout Section
-Overview
-\end_layout
-
-\begin_layout Standard
-bla bla bla bla bla bla bla bla bla bla bla bla bla PPS
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "PPS"
-description "Polyphenylene sulfide"
-
-\end_inset
-
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla, see 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rich1921,Marq1963"
-
-\end_inset
-
-.
+Adopted Development Methodology
 \end_layout
 
 \begin_layout Section
-The next section
+Functional Requirements
 \end_layout
 
-\begin_layout Standard
-\begin_inset Branch NoChildDocument
-status collapsed
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "thesisExample"
-options "alpha"
-
-\end_inset
-
-
+\begin_layout Section
+Non-Functional Requirements
 \end_layout
 
-\begin_layout Standard
-\begin_inset CommandInset nomencl_print
-LatexCommand printnomenclature
-set_width "custom"
-width "2.5cm"
-
-\end_inset
-
-
+\begin_layout Section
+Requirements’ Modeling
 \end_layout
 
-\end_inset
-
-
+\begin_layout Section*
+Conclusion
 \end_layout
 
 \end_body

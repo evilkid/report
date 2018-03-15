@@ -3,7 +3,7 @@
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin /systemlyxdir/examples/thesis/
+\origin unavailable
 \textclass scrbook
 \begin_preamble
 % in case somebody want to have the label "Equation"
@@ -62,7 +62,7 @@
 \end_preamble
 \options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
 \use_default_options true
-\master thesis.lyx
+\master /usr/share/lyx/examples/thesis/thesis.lyx
 \begin_modules
 customHeadersFooters
 \end_modules
@@ -172,7 +172,7 @@ chaptername
 
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -203,7 +203,7 @@ rightmark
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Enable page headers and add the chapter to the header line.
@@ -216,7 +216,7 @@ Enable page headers and add the chapter to the header line.
 
 \begin_layout Right Header
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -273,7 +273,7 @@ thepage
 status open
 
 \begin_layout Plain Layout
-
+stest
 \end_layout
 
 \end_inset
@@ -295,70 +295,31 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-Title of first chapter
+General Frame of the Project
+\end_layout
+
+\begin_layout Section*
+Introduction 
 \end_layout
 
 \begin_layout Section
-Overview
-\end_layout
-
-\begin_layout Standard
-bla bla bla bla bla bla bla bla bla bla bla, see 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:The-next-section"
-
-\end_inset
-
-.
- Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla DLC-coatings
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "DLC"
-description "diamond-like carbon"
-
-\end_inset
-
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
- bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla,
- see 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Fowl1928"
-
-\end_inset
-
-.
- 
-\begin_inset CommandInset ref
-LatexCommand eqref
-reference "eq:Integral-sine"
-
-\end_inset
-
- is the definition of the integral sine function.
-\begin_inset Formula 
-\begin{equation}
-\int\frac{\sin(x)}{x}\,\mathrm{d}x=\mathrm{Si}(x)\label{eq:Integral-sine}
-\end{equation}
-
-\end_inset
-
-
+Presentation of the host organization
 \end_layout
 
 \begin_layout Section
-The next section
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:The-next-section"
+Project context
+\end_layout
 
-\end_inset
+\begin_layout Section
+Problematic
+\end_layout
 
+\begin_layout Section
+Proposed Solution
+\end_layout
 
+\begin_layout Section*
+Conclusion
 \end_layout
 
 \begin_layout Standard
