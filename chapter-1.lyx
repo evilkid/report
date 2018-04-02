@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -60,7 +60,7 @@
 %}
 %\@ifpackageloaded{babel}{\addto\extrasenglish{\refnamechanges}}{\refnamechanges}
 \end_preamble
-\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage
 \use_default_options true
 \master /usr/share/lyx/examples/thesis/thesis.lyx
 \begin_modules
@@ -81,6 +81,8 @@ customHeadersFooters
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -123,6 +125,7 @@ customHeadersFooters
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \branch NoChildDocument
 \selected 0
 \filename_suffix 0
@@ -136,7 +139,11 @@ customHeadersFooters
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
-\quotes_language english
+\is_math_indent 1
+\math_indentation default
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
@@ -273,7 +280,7 @@ thepage
 status open
 
 \begin_layout Plain Layout
-stest
+
 \end_layout
 
 \end_inset
@@ -302,20 +309,234 @@ General Frame of the Project
 Introduction 
 \end_layout
 
+\begin_layout Standard
+In this chapter, I will start by presenting the hosted company, along with
+ a presentation of the problem I am trying to solve, afterward I will introduce
+ my proposed solution.
+\end_layout
+
 \begin_layout Section
 Presentation of the host organization
 \end_layout
 
-\begin_layout Section
-Project context
+\begin_layout Standard
+Human Resources field is a vast fertile ground for innovation, this is where
+ Advyteam chose to operate, by creating an HR Solution named 
+\begin_inset Quotes eld
+\end_inset
+
+Accretio
+\begin_inset Quotes erd
+\end_inset
+
+, suited for all kind of enterprises, it spans different areas of expertise,
+ divided in several modules which the client can choose from.
+ Modules such Core HR functionallities, Talent Management, Leave Management,
+ and others.
+\end_layout
+
+\begin_layout Standard
+Currently, Accretio is an install based application, however, the company
+ is actively porting the application to a SAAS (Software as a service) based
+ one, with support of multi-tenancy, automatic scaling, ...
+\end_layout
+
+\begin_layout Standard
+Advyteam is a young company, established 2011 by 3 human resources tunisian
+ specialists, its headquarters is situated in Paris, France.
+\end_layout
+
+\begin_layout Standard
+Besides its Human resource management system accretio, Advyteam also provides
+ certification programs in Human resources throught its Advyteam Academy,
+ and offers training and coaching in almost all of the human resources feilds.
 \end_layout
 
 \begin_layout Section
-Problematic
+Project Background
+\end_layout
+
+\begin_layout Standard
+With its effort to port the application to a SAAS software model, the company's
+ engineers have faced several problems, one if these problems is how to
+ give the ability to a user of the application to define, launch and monitor
+ batch jobs.
+\end_layout
+
+\begin_layout Standard
+A batch job is a computer program or set of programs processed in batch
+ mode.
+ This means that a sequence of commands to be executed by the operating
+ system and submitted for execution as a single unit.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "afrx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Currently, the application have several built-in batch jobs, such as calculating
+ the employees payrolls, leaves, evaludations, etc.
+ However, these batchs are neither extendible nor configurable.
+ 
+\end_layout
+
+\begin_layout Standard
+Say we have 2 clients, they both need to generate their employees payrolls,
+ yet they both have different businness to rule to calculate the salary,
+ in this case we may end up writing 2 separate batchs for each client.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, each time a client comes up with a new use case for batch processin
+g, or a new buissness rule to be excuted in a batch job, he have to revert
+ to the Advyteam developers to write a new specific batch, which could be
+ very tideous in a SAAS architecture with tens or hundreds of clients.
+\end_layout
+
+\begin_layout Standard
+In the next section, I will present the different solutions that we came
+ up to try to solve the above problem.
 \end_layout
 
 \begin_layout Section
 Proposed Solution
+\end_layout
+
+\begin_layout Standard
+The most challenging aspect of this project, is how to provide the client,
+ a mean to insert his own logic into the application, with little or no
+ help from the Advyteam team.
+\end_layout
+
+\begin_layout Standard
+Before we dig into the different solutions, we need to have a very basic
+ knowledge of how a batch work, we will dive deeper on how a batch work
+ in future chapters.
+\end_layout
+
+\begin_layout Standard
+A batch job is mainly composed of three steps; 
+\end_layout
+
+\begin_layout Itemize
+A reading step, from which we will read the data that will be processed,
+ this 
+\begin_inset Quotes eld
+\end_inset
+
+data
+\begin_inset Quotes erd
+\end_inset
+
+ is the list of the register numbers of the employees that would be proceesed.
+\end_layout
+
+\begin_layout Itemize
+A processing step, where the data that has been read in the previsous step
+ will processed, this step will hold the client buissness logic.
+\end_layout
+
+\begin_layout Itemize
+A writing step, where you can write the changes that you have made in a
+ datasource, generate reports...
+ etc.
+\end_layout
+
+\begin_layout Standard
+We need to find out a way where the client can enter his own logic for all
+ of the three steps mentioned above, then somehow insert them and execute
+ them into our application.
+\end_layout
+
+\begin_layout Standard
+I will detail in the next subsection the solutions that we came up with
+ and the choice we made;
+\end_layout
+
+\begin_layout Subsection
+RESTful APIs calls
+\end_layout
+
+\begin_layout Standard
+The first solution we came up with, is to create a single batch job that
+ consumes a RESTful API for each step, where we can call for the reading,
+ processing and writing.
+ 
+\end_layout
+
+\begin_layout Standard
+However this solution mandates that the client expose these RESTful APIs,
+ and host it somewhere on his own servers, we cannot garentee that all of
+ our clients would be able to host a RESTful APIs.
+\end_layout
+
+\begin_layout Standard
+Another drawback is this solution would be very inefficient, we would bombard
+ the client servers with our calls, and the processing would be done on
+ their servers aswell.
+\end_layout
+
+\begin_layout Standard
+This solution is quite simple, but presents lots of inefficiencies.
+\end_layout
+
+\begin_layout Subsection
+Maven plugin
+\end_layout
+
+\begin_layout Standard
+Another solution that has been raised, is to use a maven plugin.
+ 
+\end_layout
+
+\begin_layout Subsection
+Rule Engine
+\end_layout
+
+\begin_layout Standard
+We could also use a rule engine (such as drools), give the client the ability
+ to define the rules that he would like to apply, and execute those rules
+ when selecting the employees population (reading step), and also in the
+ processing step.
+\end_layout
+
+\begin_layout Standard
+As you can notice, this solution is very limitted to the number of possiblities
+ that the client can chose from (finite list of rules), and would be able
+ to define very simple and basic operations, simple filtering in the reading
+ step, and basic math operations in the processing step.
+ 
+\end_layout
+
+\begin_layout Standard
+The client have no control over the reading step, which is another great
+ limitation, and no controls over the data structure to be used.
+\end_layout
+
+\begin_layout Subsection
+JAR Implementation
+\end_layout
+
+\begin_layout Standard
+We decided to go Java's way.
+ The solution we went for is to create 
+\begin_inset Quotes eld
+\end_inset
+
+specification jar
+\begin_inset Quotes erd
+\end_inset
+
+.
+ We will give the client a jar that he has to implement.
+ This jar will contains a set of interfaces and abstract classes, that the
+ client would implement in order to write his own business.
 \end_layout
 
 \begin_layout Section*
@@ -324,6 +545,7 @@ Conclusion
 
 \begin_layout Standard
 \begin_inset Branch NoChildDocument
+inverted 0
 status collapsed
 
 \begin_layout Standard
