@@ -524,19 +524,42 @@ JAR Implementation
 \end_layout
 
 \begin_layout Standard
-We decided to go Java's way.
- The solution we went for is to create 
+We decided to go Java's way, using specifications.
+ The solution we went for is to create 2 jars: 
+\end_layout
+
+\begin_layout Itemize
+Specification Jar: Also called 
 \begin_inset Quotes eld
 \end_inset
 
-specification jar
+Template Jar
 \begin_inset Quotes erd
 \end_inset
 
-.
- We will give the client a jar that he has to implement.
- This jar will contains a set of interfaces and abstract classes, that the
- client would implement in order to write his own business.
+, which will be handled to the client, where he has to implement in order
+ to write his own business logic.
+ This jar will contain a set of interfaces and abstract classes, for each
+ of the 3 steps mentioned above.
+ The classes that the client wrote, would then be autowired in a runner
+ jar.
+\end_layout
+
+\begin_layout Itemize
+Runner jar: Will hold the batch step definitions and configurations, and
+ would execute the methods that has been wrote by the client in our environment,
+ by autowiring/injecting the classes that have been implemented.
+\end_layout
+
+\begin_layout Standard
+After implementing the Template Jar, the client only needs to upload the
+ generated Jar, through the application form, and specifies a set of options,
+ such the datasource that would be used in the reading step, is the job
+ scheduled, number of retries ...
+\end_layout
+
+\begin_layout Standard
+We will go through the job configuration options in details in later chapters.
 \end_layout
 
 \begin_layout Section*
