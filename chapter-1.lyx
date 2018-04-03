@@ -525,11 +525,11 @@ JAR Implementation
 
 \begin_layout Standard
 We decided to go Java's way, using specifications.
- The solution we went for is to create 2 jars: 
+ The solution we went for is to create seperate 2 jars: 
 \end_layout
 
 \begin_layout Itemize
-Specification Jar: Also called 
+Specifications Jar: Also called 
 \begin_inset Quotes eld
 \end_inset
 
@@ -537,7 +537,7 @@ Template Jar
 \begin_inset Quotes erd
 \end_inset
 
-, which will be handled to the client, where he has to implement in order
+, which will be handed to the client, where he has to implement in order
  to write his own business logic.
  This jar will contain a set of interfaces and abstract classes, for each
  of the 3 steps mentioned above.
@@ -546,16 +546,17 @@ Template Jar
 \end_layout
 
 \begin_layout Itemize
-Runner jar: Will hold the batch step definitions and configurations, and
+Runner jar: Will hold the batch steps definitions and configurations, and
  would execute the methods that has been wrote by the client in our environment,
  by autowiring/injecting the classes that have been implemented.
 \end_layout
 
 \begin_layout Standard
 After implementing the Template Jar, the client only needs to upload the
- generated Jar, through the application form, and specifies a set of options,
- such the datasource that would be used in the reading step, is the job
- scheduled, number of retries ...
+ generated Jar, through the frontend application form, and specifies a set
+ of options, such the datasource that would be used in the reading step,
+ is the job scheduled, number of retries ..., he can then manage these jobs,
+ by starting them, stoping, monitoring, view generated reports, etc.
 \end_layout
 
 \begin_layout Standard
@@ -564,6 +565,15 @@ We will go through the job configuration options in details in later chapters.
 
 \begin_layout Section*
 Conclusion
+\end_layout
+
+\begin_layout Standard
+In this chapter, I presented the frame on which this project is based on,
+ by introducing the host company as well as the needs behind the project.
+ Finally, I ended up this project by presenting the different proposed solutions
+, and the one that we went with.
+ The following chapter will be devoted to the analysis and the design of
+ the application.
 \end_layout
 
 \begin_layout Standard
