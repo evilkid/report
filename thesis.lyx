@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -60,10 +60,11 @@
 %}
 %\@ifpackageloaded{babel}{\addto\extrasenglish{\refnamechanges}}{\refnamechanges}
 \end_preamble
-\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage
 \use_default_options true
 \begin_modules
 customHeadersFooters
+enumitem
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -80,6 +81,8 @@ customHeadersFooters
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -120,6 +123,7 @@ customHeadersFooters
 \suppress_date true
 \justification true
 \use_refstyle 0
+\use_minted 0
 \branch chapter-1
 \selected 1
 \filename_suffix 0
@@ -153,7 +157,11 @@ customHeadersFooters
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
-\quotes_language english
+\is_math_indent 1
+\math_indentation default
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
@@ -495,6 +503,7 @@ Usually the summary should not have page headers.
 
 \begin_layout Standard
 \begin_inset Branch Summary
+inverted 0
 status open
 
 \begin_layout Standard
@@ -612,6 +621,7 @@ Enable page headers and add the chapter to the header line.
 
 \begin_layout Standard
 \begin_inset Branch chapter-1
+inverted 0
 status open
 
 \begin_layout Standard
@@ -631,6 +641,7 @@ filename "chapter-1.lyx"
 
 \begin_layout Standard
 \begin_inset Branch chapter-1
+inverted 0
 status open
 
 \begin_layout Standard
@@ -650,6 +661,7 @@ filename "chapter-2.lyx"
 
 \begin_layout Standard
 \begin_inset Branch chapter-2
+inverted 0
 status open
 
 \begin_layout Standard
@@ -669,6 +681,7 @@ filename "chapter-3.lyx"
 
 \begin_layout Standard
 \begin_inset Branch chapter-2
+inverted 0
 status open
 
 \begin_layout Standard
@@ -688,6 +701,7 @@ filename "chapter-4.lyx"
 
 \begin_layout Standard
 \begin_inset Branch chapter-2
+inverted 0
 status open
 
 \begin_layout Standard
@@ -699,16 +713,6 @@ filename "chapter-5.lyx"
 
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand cite
-key "ISO10780"
 
 \end_inset
 

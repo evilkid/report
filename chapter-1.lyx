@@ -487,15 +487,6 @@ This solution is quite simple, but presents lots of inefficiencies.
 \end_layout
 
 \begin_layout Subsection
-Maven plugin
-\end_layout
-
-\begin_layout Standard
-Another solution that has been raised, is to use a maven plugin.
- 
-\end_layout
-
-\begin_layout Subsection
 Rule Engine
 \end_layout
 
@@ -556,7 +547,7 @@ After implementing the Template Jar, the client only needs to upload the
  generated Jar, through the frontend application form, and specifies a set
  of options, such the datasource that would be used in the reading step,
  is the job scheduled, number of retries ..., he can then manage these jobs,
- by starting them, stoping, monitoring, view generated reports, etc.
+ by starting them, stoping, monitoring, view generated reports, and so on.
 \end_layout
 
 \begin_layout Standard

@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -60,11 +60,12 @@
 %}
 %\@ifpackageloaded{babel}{\addto\extrasenglish{\refnamechanges}}{\refnamechanges}
 \end_preamble
-\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage
 \use_default_options true
 \master /usr/share/lyx/examples/thesis/thesis.lyx
 \begin_modules
 customHeadersFooters
+enumitem
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -81,6 +82,8 @@ customHeadersFooters
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -123,6 +126,7 @@ customHeadersFooters
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \branch NoChildDocument
 \selected 0
 \filename_suffix 0
@@ -136,7 +140,11 @@ customHeadersFooters
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
-\quotes_language english
+\is_math_indent 1
+\math_indentation default
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
@@ -302,12 +310,162 @@ Analysis and Specification
 Introduction
 \end_layout
 
+\begin_layout Standard
+The first prerequisite you need to fulfill before beginning construction
+ (development) is a clear statement of the problem that the system is supposed
+ to solve.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CC"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+In this chapter, I will describe the adopted methodology along with the
+ functional requirements and non-functional requirements.
+ Lastly, I will present the system actors and use cases.
+\end_layout
+
 \begin_layout Section
 Adopted Development Methodology
 \end_layout
 
+\begin_layout Standard
+A system development methodology refers to the framework that is used to
+ structure, plan, and control the process of developing an information system.
+ One system development methodology is not necessarily suitable for use
+ by all projects.
+ Each of the available methodologies is best suited to specific kinds of
+ projects, based on various technical, organizational, project and team
+ considerations.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "METH"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For this project I have opted to use the Kanban method, the main reason
+ for this choice is that this project require alot for researching, and
+ many factors are not known beforehand, such which solution will be used,
+ what messaging system will be used, and so on.
+ 
+\end_layout
+
+\begin_layout Standard
+The tasks changes frequently, unplanned features or use cases would be added
+ on the fly if a valid Proof of Concept was introduced.
+ Kanban is suited for these kind of projects.
+\end_layout
+
+\begin_layout Standard
+Kanban provides a method to continually adapt in order to smooth out kinks
+ in the arrival of new development work.
+ In this way, it allows the organization to avoid crises and respond more
+ quickly and easily to issues that do arise.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KANBAN"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the last chapter I will be introducting the different Kanban artifacts,
+ such as the backlog, but for the next chapter, I will be discussing the
+ functional requirements.
+\end_layout
+
 \begin_layout Section
 Functional Requirements
+\end_layout
+
+\begin_layout Standard
+Functional Requirements describe what a software is supposed to do and offer
+ to its users, they are the first step toward a solution.
+ We have a single actor in this particular application, which the administrator.
+ The following, represents the requirements that the system must offer to
+ its users: 
+\end_layout
+
+\begin_layout Itemize
+Manage Job Configurations:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Create a Job Configuration by uploading jar file (that contains the client
+ business logic), and setting the running configurations.
+\end_layout
+
+\begin_layout Itemize
+Edit/Delete job configuration.
+\end_layout
+
+\begin_layout Itemize
+Start a Job Batch using a Job Configuration
+\end_layout
+
+\begin_layout Itemize
+Stop a running Job Batch
+\end_layout
+
+\begin_layout Itemize
+Restart a stopped Job Batch 
+\end_layout
+
+\begin_layout Itemize
+Retry a failed/locked Job Batch 
+\end_layout
+
+\begin_layout Itemize
+View a Job Configuration lauching history
+\end_layout
+
+\begin_layout Itemize
+Download a Job Configuration launch log
+\end_layout
+
+\begin_layout Itemize
+Download a Job Configuration launch report (if report generating is enabled
+ when creating the job configuration)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Create a solution that generate batch jobs, configurable by an end-user
+ with no or little knowledge in software development, taking in considering
+ all batch options (Database-driven, File-driven, Message-driven, Concurrent/Par
+allel/Partitioned/Chunked …).
+ 
+\end_layout
+
+\begin_layout Itemize
+Setup a distributed architecture to handle the batch execution, including
+ using Apache Kafka to queue batch events, rendering the execution asynchronous.
+ 
+\end_layout
+
+\begin_layout Itemize
+Development of a back office application to monitor and launch batches with
+ the ability to stop/restart them.
+ 
+\end_layout
+
+\begin_layout Itemize
+Generate reports summarizing the Job and batches executions and states.
 \end_layout
 
 \begin_layout Section
