@@ -516,9 +516,9 @@ In addition to the features and functions that the system will provide,
 
 \begin_layout Itemize
 Security: 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Unauthorized access to the system and its data is not allowed.
  Only authenticated users can perform an operation, such as creating a new
  job or lauchning a job, or viewing job execution.
@@ -526,9 +526,9 @@ Unauthorized access to the system and its data is not allowed.
 
 \begin_layout Itemize
 Scalability
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 The application is part of a SAAS platform, thus scalability is a must.
  This module is built with a microservice architecture in mind, so scalability
  came predefined.
@@ -536,9 +536,9 @@ The application is part of a SAAS platform, thus scalability is a must.
 
 \begin_layout Itemize
 Performance
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Batch jobs requires some important amounts of computational power, execution
  should be seamless, response time of the application must not bother the
  user in any way.
@@ -546,9 +546,9 @@ Batch jobs requires some important amounts of computational power, execution
 
 \begin_layout Itemize
 Event-driven
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Job executions might take too long to finish, so executions should be event-driv
 en, using the Asynchronous pattern to manage response time and continuous
  availability when long-running job executions are required to participate
@@ -634,17 +634,588 @@ Description
 
 \begin_layout Standard
 In this pharagraph I will define each use case written in the diagram above,
- the administrator has to be logged in, in order to execute any action.
+ later in this chapter, I will go through each use case in a detailed diagrams.
+ The administrator has to be logged in, in order to execute any action.
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-qsd
+\begin_layout Itemize
+Manage Job Configurations:
+\begin_inset Newline newline
+\end_inset
+
+Managing job configurations consist of creating configurations, by uploading
+ the business jar, specifing different job batch configurations such as
+ the data source, number of retries, etc.
+ 
 \end_layout
 
-\begin_layout Labeling
-\labelwidthstring 00.00.0000
-asd
+\begin_layout Itemize
+Manage Job Executions:
+\begin_inset Newline newline
+\end_inset
+
+The administrator can also manage the job executions, by launching, stopping,
+ restarting jobs, check job histories, download job executions logs, etc.
+\end_layout
+
+\begin_layout Itemize
+Manage Reports:
+\begin_inset Newline newline
+\end_inset
+
+After a job has been finished, the administrator can view the job execution
+ in a detailed downloadable report, that he create its template.
+ He can also check the reports that has been generated for him by a specific
+ job if he choose to during the creating of the job configuration.
+ The administrator is the one reponsible of creating the report templates,
+ and can even specify the template parameters for the detailed reports.
+\end_layout
+
+\begin_layout Subsection
+Detailed Use Case diagrams
+\end_layout
+
+\begin_layout Standard
+As stated in the above paragraph, this section will detail the complex use
+ cases, for a better understanding of the system.
+\end_layout
+
+\begin_layout Subsubsection
+Manage Job Configurations
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Figure-2.1
+\shape default
+ and 
+\shape italic
+Table-2.1
+\shape default
+ below represent respectively, the detailed diagram of the Job Configurations
+ Management use case, and its description.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename uml/ManageJobConfigurationDiagram.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manage Job Configuration Use Case Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manage Job Configuration Use Case Description
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Title
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manage Job Configuration Use Case
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intention
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Handle the absence request life cycle.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actors
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pre-Condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Successful authentication.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Starting when
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A developer send an absence request
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sequences Definition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "10cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+After the developer is logged in, he can send a leave request if he have
+ not passed the absences limit, it is then sent to the Team leader, in case
+ of acceptance, it is sent back to the Project Manager to evaluate it, then
+ the result is sent to the developer.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ending when
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "10cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+The Team Leader refuses the request, or the Project Manager approves the
+ request.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Manage Job Executions
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Figure-2.3
+\shape default
+ and 
+\shape italic
+Table-2.2
+\shape default
+ below represent respectively, the detailed diagram of the Job Executions
+ Management use case, and its description.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename uml/ManageJobExecutionsDiagram.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manage Job Executions Use Case Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+s
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manage Job Executions Use Case Description
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+s
+\end_layout
+
+\begin_layout Subsubsection
+Manage Reports
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Figure-2.4
+\shape default
+ and 
+\shape italic
+Table-2.3
+\shape default
+ below represent respectively, the detailed diagram of the Manage Reports
+ use case, and its description.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename uml/ManageReports.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manage Report Use Case Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+s
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Manage Report Use Case Description
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+s
 \end_layout
 
 \begin_layout Section*
