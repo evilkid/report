@@ -568,7 +568,7 @@ For a better understanding of the specification of the required needs of
 
 \begin_layout Standard
 In our solution, we only have one actor, which is the administrator that
- will launch and monitor all the job batchs.
+ will launch and monitor all the job batches.
 \end_layout
 
 \begin_layout Subsection
@@ -747,7 +747,7 @@ Manage Job Configuration Use Case Description
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top">
@@ -765,7 +765,7 @@ Title
 \begin_inset Text
 
 \begin_layout Plain Layout
-Manage Job Configuration Use Case
+Manage Job Configuration Use Case.
 \end_layout
 
 \end_inset
@@ -785,7 +785,7 @@ Intention
 \begin_inset Text
 
 \begin_layout Plain Layout
-Handle the absence request life cycle.
+Handle the Job Configuration management.
 \end_layout
 
 \end_inset
@@ -832,27 +832,7 @@ Successful authentication.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Starting when
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-A developer send an absence request
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -884,55 +864,12 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-After the developer is logged in, he can send a leave request if he have
- not passed the absences limit, it is then sent to the Team leader, in case
- of acceptance, it is sent back to the Project Manager to evaluate it, then
- the result is sent to the developer.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ending when
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "10cm"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-The Team Leader refuses the request, or the Project Manager approves the
- request.
+After the administrator is logged in, and after successfully implementing
+ the template jar with his business logic, he can then upload this jar into
+ the platform, when creating a job configuration, where he can also specify
+ several other parameters that would be used when launching a job the uploaded
+ jar.
+ He can edit or delete a job configuration at any given time.
 \end_layout
 
 \end_inset
@@ -1004,16 +941,14 @@ Manage Job Executions Use Case Diagram
 \end_layout
 
 \begin_layout Standard
-s
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1023,29 +958,86 @@ Manage Job Executions Use Case Description
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Title
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+Manage Job Executions Use Case.
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intention
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Handle the Job Execution management.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actors
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pre-Condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Successful authentication.
 \end_layout
 
 \end_inset
@@ -1056,15 +1048,49 @@ Manage Job Executions Use Case Description
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Sequences Definition
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "10cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+After creating a job configuration, the administrator can then use this
+ newly created configuration to launch jobs.
+ He can also monitor and manage these job executions at any given time.
+ Managing consist of starting, stopping, restarting a job, a job can fail
+ for any reason, in this case the administrator have the ability to retry
+ this failed job.
+\end_layout
+
+\begin_layout Plain Layout
+Results of a job execution can be aquired in several ways, from a dashboard
+ containing some important stats to logs and report generation.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1081,10 +1107,6 @@ Manage Job Executions Use Case Description
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-s
 \end_layout
 
 \begin_layout Subsubsection
@@ -1135,48 +1157,103 @@ Manage Report Use Case Diagram
 \end_layout
 
 \begin_layout Standard
-s
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Manage Report Use Case Description
+Manage Report Use CaseDescription
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Title
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+Manage Report Use Case.
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intention
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Handle the Report management.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actors
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pre-Condition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Successful authentication.
 \end_layout
 
 \end_inset
@@ -1187,15 +1264,44 @@ Manage Report Use Case Description
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Sequences Definition
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "10cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+For a better understanding of a job execution, an administrator can generate
+ a report, that he created its template.
+ There are two types of reports, Job Execution reports, and specefic reports.
+ For the latter, the administrator can specify the list of the parameters
+ that would be injected, in contrast to the job execution report, which
+ have a predefined paramters list.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1214,12 +1320,17 @@ Manage Report Use Case Description
 
 \end_layout
 
-\begin_layout Standard
-s
-\end_layout
-
 \begin_layout Section*
 Conclusion
+\end_layout
+
+\begin_layout Standard
+In this chapter I went through the functional and non-functional requirements.
+ Moreover, I made an analysis of these requirements by identifying drawing
+ the global Use Case diagram and its description, along with the detailed
+ diagram for each use case.
+ In the next chapter, I’m going to build on top of this analysis, and specify
+ the design of the application.
 \end_layout
 
 \end_body

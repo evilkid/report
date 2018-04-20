@@ -310,7 +310,7 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-In this chapter, I will start by presenting the hosted company, along with
+In this chapter, I will start by presenting the host company, along with
  a presentation of the problem I am trying to solve, afterward I will introduce
  my proposed solution.
 \end_layout
@@ -338,11 +338,13 @@ Accretio
 \begin_layout Standard
 Currently, Accretio is an install based application, however, the company
  is actively porting the application to a SAAS (Software as a service) based
- one, with support of multi-tenancy, automatic scaling, ...
+ one, with support of multi-tenancy, automatic scaling, etc.
+ Accretio uses the microservice architecture, which makes creating new services,
+ and plugin in new services relatively easy.
 \end_layout
 
 \begin_layout Standard
-Advyteam is a young company, established 2011 by 3 human resources tunisian
+Advyteam is a young company, established 2011 by three human resources tunisian
  specialists, its headquarters is situated in Paris, France.
 \end_layout
 
@@ -358,7 +360,7 @@ Project Background
 
 \begin_layout Standard
 With its effort to port the application to a SAAS software model, the company's
- engineers have faced several problems, one if these problems is how to
+ engineers have faced several problems, one of these problems is how to
  give the ability to a user of the application to define, launch and monitor
  batch jobs.
 \end_layout
@@ -381,14 +383,14 @@ literal "false"
 \begin_layout Standard
 Currently, the application have several built-in batch jobs, such as calculating
  the employees payrolls, leaves, evaludations, etc.
- However, these batchs are neither extendible nor configurable.
+ However, those batches are neither extendible nor configurable.
  
 \end_layout
 
 \begin_layout Standard
 Say we have 2 clients, they both need to generate their employees payrolls,
- yet they both have different businness to rule to calculate the salary,
- in this case we may end up writing 2 separate batchs for each client.
+ yet they both have different businness rules to calculate the salary, in
+ this case we may end up writing 2 separate batches for each client.
  
 \end_layout
 
@@ -409,7 +411,7 @@ Proposed Solution
 \end_layout
 
 \begin_layout Standard
-The most challenging aspect of this project, is how to provide the client,
+The most challenging aspect of this project, is how to provide to the client,
  a mean to insert his own logic into the application, with little or no
  help from the Advyteam team.
 \end_layout
@@ -421,7 +423,8 @@ Before we dig into the different solutions, we need to have a very basic
 \end_layout
 
 \begin_layout Standard
-A batch job is mainly composed of three steps; 
+A batch job is mainly composed of at least one step, each step itself is
+ divided into three other steps; 
 \end_layout
 
 \begin_layout Itemize
@@ -434,18 +437,57 @@ data
 \begin_inset Quotes erd
 \end_inset
 
- is the list of the register numbers of the employees that would be proceesed.
+ is the list of the registration numbers of the employees that would be
+ proceesed.
 \end_layout
 
 \begin_layout Itemize
 A processing step, where the data that has been read in the previsous step
- will processed, this step will hold the client buissness logic.
+ be will processed, this step will hold the client buissness logic.
 \end_layout
 
 \begin_layout Itemize
 A writing step, where you can write the changes that you have made in a
  datasource, generate reports...
  etc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/simplebatchjob.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simple Batch Job Execution Components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
