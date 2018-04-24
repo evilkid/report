@@ -2156,11 +2156,16 @@
 }
 
 @Misc{NONFUNC,
-  author       = {Higher National Computing},
-  title        = {D77F 35: Systems Development: Structured Design Methods},
-  howpublished = {https://www.sqa.org.uk/e-learning/SiteHomeCD/page_19.htm},
-  month        = sep,
-  year         = {2010},
+  author = {Higher National Computing},
+  title  = {D77F 35: Systems Development: Structured Design Methods},
+  month  = sep,
+  year   = {2010},
+}
+
+@Misc{JSR,
+  author       = {Oracle},
+  title        = {JSRs: Java Specification Requests},
+  howpublished = {https://jcp.org/en/jsr/overview},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

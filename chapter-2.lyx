@@ -317,7 +317,7 @@ The first prerequisite you need to fulfill before beginning construction
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CC"
-literal "false"
+literal "true"
 
 \end_inset
 
@@ -355,7 +355,7 @@ literal "false"
 
 \begin_layout Standard
 For this project I have opted to use the Kanban method, the main reason
- for this choice is that this project require alot for researching, and
+ for this choice is that this project require a lot for researching, and
  many factors are not known beforehand, such which solution will be used,
  what messaging system will be used, and so on.
  
@@ -383,9 +383,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In the last chapter I will be introducting the different Kanban artifacts,
- such as the backlog, but for the next chapter, I will be discussing the
- functional requirements.
+In the last chapter I will be introducing the different Kanban artifacts,
+ such as the backlog, however for the next section, I will be discussing
+ the functional requirements.
 \end_layout
 
 \begin_layout Section
@@ -431,7 +431,7 @@ Retry a failed/locked Job Batch
 \end_layout
 
 \begin_layout Itemize
-View a Job Configuration lauching history
+View a Job Configuration launching history
 \end_layout
 
 \begin_layout Itemize
@@ -480,11 +480,11 @@ Job executions status (completed, on progress, stopped, locked, failed)
 \end_layout
 
 \begin_layout Itemize
-Number of reports generate per report tamplate
+Number of reports generate per report template
 \end_layout
 
 \begin_layout Itemize
-Visualize all job executions logs, with the ablity to filter on the results
+Visualize all job executions logs, with the ability to filter on the results
 \end_layout
 
 \end_deeper
@@ -521,7 +521,7 @@ Security:
 
 Unauthorized access to the system and its data is not allowed.
  Only authenticated users can perform an operation, such as creating a new
- job or lauchning a job, or viewing job execution.
+ job, launching a job, or viewing job execution.
 \end_layout
 
 \begin_layout Itemize
@@ -644,7 +644,7 @@ Manage Job Configurations:
 \end_inset
 
 Managing job configurations consist of creating configurations, by uploading
- the business jar, specifing different job batch configurations such as
+ the business jar, specifying different job batch configurations such as
  the data source, number of retries, etc.
  
 \end_layout
@@ -665,9 +665,9 @@ Manage Reports:
 
 After a job has been finished, the administrator can view the job execution
  in a detailed downloadable report, that he create its template.
- He can also check the reports that has been generated for him by a specific
- job if he choose to during the creating of the job configuration.
- The administrator is the one reponsible of creating the report templates,
+ He can also check the reports that has been generated during the writing
+ step, if he choose to during the creating of the job configuration.
+ The administrator is the one responsible of creating the report templates,
  and can even specify the template parameters for the detailed reports.
 \end_layout
 
@@ -1085,7 +1085,7 @@ After creating a job configuration, the administrator can then use this
 \end_layout
 
 \begin_layout Plain Layout
-Results of a job execution can be aquired in several ways, from a dashboard
+Results of a job execution can be acquired in several ways, from a dashboard
  containing some important stats to logs and report generation.
 \end_layout
 
@@ -1168,7 +1168,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Manage Report Use CaseDescription
+Manage Report Use Case Description
 \end_layout
 
 \end_inset
@@ -1294,7 +1294,8 @@ status open
 \begin_layout Plain Layout
 For a better understanding of a job execution, an administrator can generate
  a report, that he created its template.
- There are two types of reports, Job Execution reports, and specefic reports.
+ There are two types of reports, Job Execution reports, and specific reports
+ (generated during the writing step).
  For the latter, the administrator can specify the list of the parameters
  that would be injected, in contrast to the job execution report, which
  have a predefined paramters list.

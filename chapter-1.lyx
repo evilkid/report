@@ -331,7 +331,7 @@ Accretio
 
 , suited for all kind of enterprises, it spans different areas of expertise,
  divided in several modules which the client can choose from.
- Modules such Core HR functionallities, Talent Management, Leave Management,
+ Modules such Core HR functionalities, Talent Management, Leave Management,
  and others.
 \end_layout
 
@@ -344,14 +344,14 @@ Currently, Accretio is an install based application, however, the company
 \end_layout
 
 \begin_layout Standard
-Advyteam is a young company, established 2011 by three human resources tunisian
+Advyteam is a young company, established 2011 by three human resources Tunisian
  specialists, its headquarters is situated in Paris, France.
 \end_layout
 
 \begin_layout Standard
-Besides its Human resource management system accretio, Advyteam also provides
- certification programs in Human resources throught its Advyteam Academy,
- and offers training and coaching in almost all of the human resources feilds.
+Besides its Human resource management system Accretio, Advyteam also provides
+ certification programs in Human resources through its Advyteam Academy,
+ and offers training and coaching in almost all of the human resources fields.
 \end_layout
 
 \begin_layout Section
@@ -382,23 +382,23 @@ literal "false"
 
 \begin_layout Standard
 Currently, the application have several built-in batch jobs, such as calculating
- the employees payrolls, leaves, evaludations, etc.
- However, those batches are neither extendible nor configurable.
+ the employees payrolls, leaves, evaluations, etc.
+ However, those batches are neither extendable nor configurable.
  
 \end_layout
 
 \begin_layout Standard
 Say we have 2 clients, they both need to generate their employees payrolls,
- yet they both have different businness rules to calculate the salary, in
+ yet they both have different business rules to calculate the salary, in
  this case we may end up writing 2 separate batches for each client.
  
 \end_layout
 
 \begin_layout Standard
 Furthermore, each time a client comes up with a new use case for batch processin
-g, or a new buissness rule to be excuted in a batch job, he have to revert
+g, or a new business rule to be executed in a batch job, he have to revert
  to the Advyteam developers to write a new specific batch, which could be
- very tideous in a SAAS architecture with tens or hundreds of clients.
+ very tedious in a SAAS architecture with tens or hundreds of clients.
 \end_layout
 
 \begin_layout Standard
@@ -438,12 +438,12 @@ data
 \end_inset
 
  is the list of the registration numbers of the employees that would be
- proceesed.
+ processed.
 \end_layout
 
 \begin_layout Itemize
-A processing step, where the data that has been read in the previsous step
- be will processed, this step will hold the client buissness logic.
+A processing step, where the data that has been read in the previous step
+ be will processed, this step will hold the client business logic.
 \end_layout
 
 \begin_layout Itemize
@@ -460,6 +460,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename images/simplebatchjob.png
 	scale 50
@@ -508,24 +510,62 @@ RESTful APIs calls
 \begin_layout Standard
 The first solution we came up with, is to create a single batch job that
  consumes a RESTful API for each step, where we can call for the reading,
- processing and writing.
+ processing and writing operations.
  
 \end_layout
 
 \begin_layout Standard
 However this solution mandates that the client expose these RESTful APIs,
- and host it somewhere on his own servers, we cannot garentee that all of
- our clients would be able to host a RESTful APIs.
+ and host it somewhere on his own servers, we cannot guarantee that all
+ of our clients would be able to host a RESTful APIs.
 \end_layout
 
 \begin_layout Standard
 Another drawback is this solution would be very inefficient, we would bombard
  the client servers with our calls, and the processing would be done on
- their servers aswell.
+ their servers as-well.
 \end_layout
 
 \begin_layout Standard
 This solution is quite simple, but presents lots of inefficiencies.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/RESTSolution.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+RESTful APIs Calls Solution Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -540,7 +580,7 @@ We could also use a rule engine (such as drools), give the client the ability
 \end_layout
 
 \begin_layout Standard
-As you can notice, this solution is very limitted to the number of possiblities
+As you can notice, this solution is very limited to the number of possibilities
  that the client can chose from (finite list of rules), and would be able
  to define very simple and basic operations, simple filtering in the reading
  step, and basic math operations in the processing step.
@@ -548,8 +588,9 @@ As you can notice, this solution is very limitted to the number of possiblities
 \end_layout
 
 \begin_layout Standard
-The client have no control over the reading step, which is another great
- limitation, and no controls over the data structure to be used.
+The client would have no control over the reading and writing step, which
+ is another great limitation, and no controls over the data structure to
+ be used.
 \end_layout
 
 \begin_layout Subsection
@@ -557,8 +598,17 @@ JAR Implementation
 \end_layout
 
 \begin_layout Standard
-We decided to go Java's way, using specifications.
- The solution we went for is to create seperate 2 jars: 
+We decided to go Java's way, by defining a specification, and let the vendor
+ (client in our case) implement this specification 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "JSR"
+literal "false"
+
+\end_inset
+
+.
+ The solution we went for is to create two separate jars: 
 \end_layout
 
 \begin_layout Itemize
@@ -570,10 +620,10 @@ Template Jar
 \begin_inset Quotes erd
 \end_inset
 
-, which will be handed to the client, where he has to implement in order
+, which will be handed to the client, where he has to implement it in order
  to write his own business logic.
  This jar will contain a set of interfaces and abstract classes, for each
- of the 3 steps mentioned above.
+ of the three steps mentioned above.
  The classes that the client wrote, would then be autowired in a runner
  jar.
 \end_layout
@@ -588,12 +638,63 @@ Runner jar: Will hold the batch steps definitions and configurations, and
 After implementing the Template Jar, the client only needs to upload the
  generated Jar, through the frontend application form, and specifies a set
  of options, such the datasource that would be used in the reading step,
- is the job scheduled, number of retries ..., he can then manage these jobs,
- by starting them, stoping, monitoring, view generated reports, and so on.
+ whether the job should be scheduled, number of retries ..., he can then manage
+ those jobs, by starting them, stopping, monitoring, view generated reports,
+ and so on.
 \end_layout
 
 \begin_layout Standard
 We will go through the job configuration options in details in later chapters.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Figure 1.3
+\shape default
+ below, shows a visual representation of the solution, note that the squares
+ marked in red, represents where the client's business logic will be injected,
+ and executed.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/BatchSolution.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+JAR Implementation Solution Diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -603,8 +704,8 @@ Conclusion
 \begin_layout Standard
 In this chapter, I presented the frame on which this project is based on,
  by introducing the host company as well as the needs behind the project.
- Finally, I ended up this project by presenting the different proposed solutions
-, and the one that we went with.
+ Finally, I ended this chapter by presenting the different proposed solutions,
+ and the one that I went with.
  The following chapter will be devoted to the analysis and the design of
  the application.
 \end_layout
