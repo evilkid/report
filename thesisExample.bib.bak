@@ -2166,6 +2166,21 @@
   author       = {Oracle},
   title        = {JSRs: Java Specification Requests},
   howpublished = {https://jcp.org/en/jsr/overview},
+  shorthand    = {Author},
+}
+
+@Book{CleanArch,
+  title     = {Clean Architecture A CRAFTSMANS GUIDE TO SOFTWARE STRUCTURE AND DESIGN},
+  publisher = {prentice hall},
+  year      = {2018},
+  author    = {Robert C. Martin},
+}
+
+@Misc{Microservice,
+  author       = {Martin Fowler},
+  title        = {Microservices a definition of this new architectural term},
+  howpublished = {https://martinfowler.com/articles/microservices.html},
+  year         = {2018},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -114,9 +114,9 @@ enumitem
 \use_package stackrel 0
 \use_package stmaryrd 0
 \use_package undertilde 0
-\cite_engine basic
-\cite_engine_type default
-\biblio_style plain
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -145,6 +145,21 @@ enumitem
 \color #ffff00
 \end_branch
 \branch Appendix
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch chapter-3
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch chapter-4
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch chapter-5
 \selected 1
 \filename_suffix 0
 \color #faf0e6
@@ -640,7 +655,7 @@ filename "chapter-1.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch chapter-1
+\begin_inset Branch chapter-2
 inverted 0
 status open
 
@@ -660,7 +675,7 @@ filename "chapter-2.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch chapter-2
+\begin_inset Branch chapter-3
 inverted 0
 status open
 
@@ -680,7 +695,7 @@ filename "chapter-3.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch chapter-2
+\begin_inset Branch chapter-4
 inverted 0
 status open
 
@@ -700,7 +715,7 @@ filename "chapter-4.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Branch chapter-2
+\begin_inset Branch chapter-5
 inverted 0
 status open
 

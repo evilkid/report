@@ -391,9 +391,7 @@ Figure 3.1
  below represents the overall architecture, with some Accretio microservices,
  the one outlined in red is the microservice that I am in charge of, basically,
  most of the communication are done through HTTP, except for the communication
- betwen the running job, and the BatchWS microservice, which is done in
- socket to keep the BatchWS updated in real-time whenever the status of
- the job is changed.
+ betwen the running job, and the microservice, which is done in socket 
 \begin_inset Float figure
 wide false
 sideways false
@@ -404,7 +402,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/Architecture.png
-	scale 43
+	scale 40
 
 \end_inset
 
@@ -430,24 +428,6 @@ Architecture
 
 \begin_layout Section
 Class Diagram
-\end_layout
-
-\begin_layout Standard
-Class diagrams are one of the most fundamental diagram types in UML.
- They are used to capture the static relationships of your software; in
- other words, how things are put together.
- Class diagrams use classes and interfaces to capture details about the
- entities that make up your system and the static relationships between
- them.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "UML"
-literal "false"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section

@@ -2183,7 +2183,7 @@
   year         = {2018},
 }
 
-@Book{UML,
+@Book{U,
   title     = {UML 2.0 in a Nutshell},
   publisher = {O'Reilly},
   year      = {2005},
