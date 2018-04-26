@@ -2183,11 +2183,18 @@
   year         = {2018},
 }
 
-@Book{U,
+@Book{UML,
   title     = {UML 2.0 in a Nutshell},
   publisher = {O'Reilly},
   year      = {2005},
   author    = {By Dan Pilone, Neil Pitman},
+}
+
+@Book{L,
+  title     = {Learning UML 2.0},
+  publisher = {O Reilly},
+  year      = {2006},
+  author    = {Kim Hamilton, Russell Miles},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

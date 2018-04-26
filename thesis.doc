@@ -1,0 +1,1227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="http://www.nongnu.org/elyxer/">
+<meta name="create-date" content="2018-04-26">
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all">
+<title>Design and development of a highly configurable solution to manage and supervise batch executions</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="title">
+Design and development of a highly configurable solution to manage and supervise batch executions
+</h1>
+<h2 class="author">
+OUERGHI Yassine
+</h2>
+<div class="Dedication">
+To all ...
+</div>
+<div class="Standard">
+<p><br>
+</p>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Left">
+
+</div>
+<div class="Center">
+
+</div>
+<div class="Right">
+<span class="unknown">\thepage</span>
+</div>
+<div class="fulltoc">
+<div class="tocheader">
+Table of Contents
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter--1">Chapter: Abstract</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-1">Chapter 1: General Frame of the Project</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--1">Section: Introduction </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.1">Section 1.1: Presentation of the host organization</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.2">Section 1.2: Project Background</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.3">Section 1.3: Proposed Solution</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-1.3.1">Subsection 1.3.1: RESTful APIs calls</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-1.3.2">Subsection 1.3.2: Rule Engine</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-1.3.3">Subsection 1.3.3: JAR Implementation</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--2">Section: Conclusion</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#Nomenclature">Nomenclature</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-2">Chapter 2: Analysis and Specification</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--3">Section: Introduction</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.1">Section 2.1: Adopted Development Methodology</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.2">Section 2.2: Functional Requirements</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.3">Section 2.3: Non-Functional Requirements</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.4">Section 2.4: Requirements’ Modeling</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.4.1">Subsection 2.4.1: General Use Case Diagram</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-2.4.2">Subsection 2.4.2: Detailed Use Case diagrams</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--4">Section: Conclusion</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-3">Chapter 3: Design</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--5">Section: Introduction</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.1">Section 3.1: Architecture</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.2">Section 3.2: Class Diagram</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.3">Section 3.3: Sequence Diagrams</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.4">Section 3.4: Entity relation diagram</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--6">Section: Conclusion</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#Nomenclature">Nomenclature</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-4">Chapter 4: Implementation</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--7">Section: Introduction</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.1">Section 4.1: Development Environment</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.2">Section 4.2: Technologies</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.3">Section 4.3: Solution</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.3.1">Subsection 4.3.1: Spring Batch Steps</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.3.2">Subsection 4.3.2: Asynchronous Communication</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.3.3">Subsection 4.3.3: Configuration</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.3.4">Subsection 4.3.4: Report templating &amp; generation</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-4.3.5">Subsection 4.3.5: Logs managment</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.4">Section 4.4: Overview of the achieved work</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.5">Section 4.5: Entity relation diagram</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--8">Section: Conclusion</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#Nomenclature">Nomenclature</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-5">Chapter 5: TODO</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section--9">Section: Introduction</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-5.1">Section 5.1: Kanban charts</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-5.2">Section 5.2: Perspective</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section--10">Section: Conclusion</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#Nomenclature">Nomenclature</a>
+</div>
+<div class="toc">
+<a class="Link" href="#Nomenclature">Nomenclature</a>
+</div>
+
+</div>
+<div class="Standard">
+<p><br>
+</p>
+
+</div>
+<div class="Standard">
+<span class="unknown">\pagestyle</span>plain
+</div>
+<div class="Standard">
+<span class="branch">
+<div class="Standard">
+
+</div>
+
+</span>
+
+</div>
+<h1 class="Chapter-">
+<a class="toc" name="toc-Chapter--1"></a>Abstract
+</h1>
+<div class="Standard">
+ 
+</div>
+<div class="Standard">
+TODO: Abstract/Summary
+</div>
+<div class="Standard">
+<p><br>
+</p>
+
+</div>
+<div class="Standard">
+<span class="unknown">\pagestyle</span>fancy
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Standard">
+<span class="branch">
+<div class="Standard">
+
+</div>
+
+</span>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Left">
+
+</div>
+<div class="Center">
+
+</div>
+<div class="Right">
+<span class="unknown">\thepage</span>
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-1">1</a> General Frame of the Project
+</h1>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--1"></a>Introduction 
+</h2>
+<div class="Standard">
+In this chapter, I will start by presenting the host company, along with a presentation of the problem I am trying to solve, afterward I will introduce my proposed solution.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.1">1.1</a> Presentation of the host organization
+</h2>
+<div class="Standard">
+Human Resources field is a vast fertile ground for innovation, this is where Advyteam chose to operate, by creating an HR Solution named &ldquo;Accretio&rdquo;, suited for all kind of enterprises, it spans different areas of expertise, divided in several modules which the client can choose from. Modules such Core HR functionalities, Talent Management, Leave Management, and others.
+</div>
+<div class="Standard">
+Currently, Accretio is an install based application, however, the company is actively porting the application to a SAAS (Software as a service) based one, with support of multi-tenancy, automatic scaling, etc. Accretio uses the microservice architecture, which makes creating new services, and plugin in new services relatively easy.
+</div>
+<div class="Standard">
+Advyteam is a young company, established 2011 by three human resources Tunisian specialists, its headquarters is situated in Paris, France.
+</div>
+<div class="Standard">
+Besides its Human resource management system Accretio, Advyteam also provides certification programs in Human resources through its Advyteam Academy, and offers training and coaching in almost all of the human resources fields.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.2">1.2</a> Project Background
+</h2>
+<div class="Standard">
+With its effort to port the application to a SAAS software model, the company’s engineers have faced several problems, one of these problems is how to give the ability to a user of the application to define, launch and monitor batch jobs.
+</div>
+<div class="Standard">
+A batch job is a computer program or set of programs processed in batch mode. This means that a sequence of commands to be executed by the operating system and submitted for execution as a single unit.<span class="bibcites">[<a class="bibliocite" name="cite-5" href="#biblio-5"><span class="bib-Sur">UNI</span><span class="bib-YY">18</span></a>]</span>
+</div>
+<div class="Standard">
+Currently, the application have several built-in batch jobs, such as calculating the employees payrolls, leaves, evaluations, etc. However, those batches are neither extendable nor configurable. 
+</div>
+<div class="Standard">
+Say we have 2 clients, they both need to generate their employees payrolls, yet they both have different business rules to calculate the salary, in this case we may end up writing 2 separate batches for each client. 
+</div>
+<div class="Standard">
+Furthermore, each time a client comes up with a new use case for batch processing, or a new business rule to be executed in a batch job, he have to revert to the Advyteam developers to write a new specific batch, which could be very tedious in a SAAS architecture with tens or hundreds of clients.
+</div>
+<div class="Standard">
+In the next section, I will present the different solutions that we came up to try to solve the above problem.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.3">1.3</a> Proposed Solution
+</h2>
+<div class="Standard">
+The most challenging aspect of this project, is how to provide to the client, a mean to insert his own logic into the application, with little or no help from the Advyteam team.
+</div>
+<div class="Standard">
+Before we dig into the different solutions, we need to have a very basic knowledge of how a batch work, we will dive deeper on how a batch work in future chapters.
+</div>
+<div class="Standard">
+A batch job is mainly composed of at least one step, each step itself is divided into three other steps; 
+</div>
+<ul>
+<li>
+A reading step, from which we will read the data that will be processed, this &ldquo;data&rdquo; is the list of the registration numbers of the employees that would be processed.
+</li>
+<li>
+A processing step, where the data that has been read in the previous step be will processed, this step will hold the client business logic.
+</li>
+<li>
+A writing step, where you can write the changes that you have made in a datasource, generate reports... etc.
+</li>
+
+</ul>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-1.1"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="images/simplebatchjob.png" alt="figure images/simplebatchjob.png" style="width: 419px; max-width: 838px; height: 94px; max-height: 189px;">
+
+</div>
+<div class="caption">
+Figure 1.1 Simple Batch Job Execution Components
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Standard">
+We need to find out a way where the client can enter his own logic for all of the three steps mentioned above, then somehow insert them and execute them into our application.
+</div>
+<div class="Standard">
+I will detail in the next subsection the solutions that we came up with and the choice we made;
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.3.1">1.3.1</a> RESTful APIs calls
+</h3>
+<div class="Standard">
+The first solution we came up with, is to create a single batch job that consumes a RESTful API for each step, where we can call for the reading, processing and writing operations. 
+</div>
+<div class="Standard">
+However this solution mandates that the client expose these RESTful APIs, and host it somewhere on his own servers, we cannot guarantee that all of our clients would be able to host a RESTful APIs.
+</div>
+<div class="Standard">
+Another drawback is this solution would be very inefficient, we would bombard the client servers with our calls, and the processing would be done on their servers as-well.
+</div>
+<div class="Standard">
+This solution is quite simple, but presents lots of inefficiencies.
+</div>
+<div class="Standard">
+<div class="center">
+<div class="float">
+<a class="Label" name="Figure-1.2"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="images/RESTSolution.png" alt="figure images/RESTSolution.png" style="width: 335px; max-width: 838px; height: 271px; max-height: 679px;">
+
+</div>
+<div class="caption">
+Figure 1.2 RESTful APIs Calls Solution Diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.3.2">1.3.2</a> Rule Engine
+</h3>
+<div class="Standard">
+We could also use a rule engine (such as drools), give the client the ability to define the rules that he would like to apply, and execute those rules when selecting the employees population (reading step), and also in the processing step.
+</div>
+<div class="Standard">
+As you can notice, this solution is very limited to the number of possibilities that the client can chose from (finite list of rules), and would be able to define very simple and basic operations, simple filtering in the reading step, and basic math operations in the processing step. 
+</div>
+<div class="Standard">
+The client would have no control over the reading and writing step, which is another great limitation, and no controls over the data structure to be used.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.3.3">1.3.3</a> JAR Implementation
+</h3>
+<div class="Standard">
+We decided to go Java’s way, by defining a specification, and let the vendor (client in our case) implement this specification <span class="bibcites">[<a class="bibliocite" name="cite-7" href="#biblio-7"><span class="bib-Sur">Ora</span><span class="bib-YY">??</span></a>]</span>. The solution we went for is to create two separate jars: 
+</div>
+<ul>
+<li>
+Specifications Jar: Also called &ldquo;Template Jar&rdquo;, which will be handed to the client, where he has to implement it in order to write his own business logic. This jar will contain a set of interfaces and abstract classes, for each of the three steps mentioned above. The classes that the client wrote, would then be autowired in a runner jar.
+</li>
+<li>
+Runner jar: Will hold the batch steps definitions and configurations, and would execute the methods that has been wrote by the client in our environment, by autowiring/injecting the classes that have been implemented.
+</li>
+
+</ul>
+<div class="Standard">
+After implementing the Template Jar, the client only needs to upload the generated Jar, through the frontend application form, and specifies a set of options, such the datasource that would be used in the reading step, whether the job should be scheduled, number of retries ..., he can then manage those jobs, by starting them, stopping, monitoring, view generated reports, and so on.
+</div>
+<div class="Standard">
+We will go through the job configuration options in details in later chapters.
+</div>
+<div class="Standard">
+<i>Figure 1.3</i> below, shows a visual representation of the solution, note that the squares marked in red, represents where the client’s business logic will be injected, and executed.
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-1.3"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="images/BatchSolution.png" alt="figure images/BatchSolution.png" style="width: 415px; max-width: 831px; height: 356px; max-height: 712px;">
+
+</div>
+<div class="caption">
+Figure 1.3 JAR Implementation Solution Diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--2"></a>Conclusion
+</h2>
+<div class="Standard">
+In this chapter, I presented the frame on which this project is based on, by introducing the host company as well as the needs behind the project. Finally, I ended this chapter by presenting the different proposed solutions, and the one that I went with. The following chapter will be devoted to the analysis and the design of the application.
+</div>
+<a class="toc" name="Nomenclature"></a><h1 class="nomenclature">Nomenclature</h1><div class="Standard">
+<span class="branch">
+<div class="Standard">
+
+</div>
+
+</span>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Left">
+
+</div>
+<div class="Center">
+
+</div>
+<div class="Right">
+<span class="unknown">\thepage</span>
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-2">2</a> Analysis and Specification
+</h1>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--3"></a>Introduction
+</h2>
+<div class="Standard">
+The first prerequisite you need to fulfill before beginning construction (development) is a clear statement of the problem that the system is supposed to solve.<span class="bibcites">[<a class="bibliocite" name="cite-9" href="#biblio-9"><span class="bib-Sur">McC</span><span class="bib-YY">04</span></a>]</span> 
+</div>
+<div class="Standard">
+In this chapter, I will describe the adopted methodology along with the functional requirements and non-functional requirements. Lastly, I will present the system actors and use cases.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.1">2.1</a> Adopted Development Methodology
+</h2>
+<div class="Standard">
+A system development methodology refers to the framework that is used to structure, plan, and control the process of developing an information system. One system development methodology is not necessarily suitable for use by all projects. Each of the available methodologies is best suited to specific kinds of projects, based on various technical, organizational, project and team considerations. <span class="bibcites">[<a class="bibliocite" name="cite-2" href="#biblio-2"><span class="bib-Sur">Ser</span><span class="bib-YY">08</span></a>]</span>
+</div>
+<div class="Standard">
+For this project I have opted to use the Kanban method, the main reason for this choice is that this project require a lot for researching, and many factors are not known beforehand, such which solution will be used, what messaging system will be used, and so on. 
+</div>
+<div class="Standard">
+The tasks changes frequently, unplanned features or use cases would be added on the fly if a valid Proof of Concept was introduced. Kanban is suited for these kind of projects.
+</div>
+<div class="Standard">
+Kanban provides a method to continually adapt in order to smooth out kinks in the arrival of new development work. In this way, it allows the organization to avoid crises and respond more quickly and easily to issues that do arise.<span class="bibcites">[<a class="bibliocite" name="cite-3" href="#biblio-3"><span class="bib-Sur">AL</span><span class="bib-YY">10</span></a>]</span>
+</div>
+<div class="Standard">
+In the last chapter I will be introducing the different Kanban artifacts, such as the backlog, however for the next section, I will be discussing the functional requirements.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.2">2.2</a> Functional Requirements
+</h2>
+<div class="Standard">
+Functional Requirements describe what a software is supposed to do and offer to its users, they are the first step toward a solution. We have a single actor in this particular application, which the administrator. The following, represents the requirements that the system must offer to its users: 
+</div>
+<ul>
+<li>
+Manage Job Configurations:<ul>
+<li>
+Create a Job Configuration by uploading jar file (that contains the client business logic), and setting the running configurations.
+</li>
+<li>
+Edit/Delete job configuration.
+</li>
+<li>
+Start a Job Batch using a Job Configuration
+</li>
+<li>
+Stop a running Job Batch
+</li>
+<li>
+Restart a stopped Job Batch 
+</li>
+<li>
+Retry a failed/locked Job Batch 
+</li>
+<li>
+View a Job Configuration launching history
+</li>
+<li>
+Download a Job Configuration launch log
+</li>
+<li>
+Download a Job Configuration launch report (if report generating is enabled when creating the job configuration)
+</li>
+
+</ul>
+
+</li>
+<li>
+Manage Reports:<ul>
+<li>
+Create Job Configuration reports template 
+</li>
+<li>
+Create Specific reports template 
+</li>
+<li>
+Manage Report Template Parameters
+</li>
+<li>
+Generate Report using a Template and parse parameters
+</li>
+
+</ul>
+
+</li>
+<li>
+Dashboard summarizing jobs executions and states:<ul>
+<li>
+Number of job executions per date
+</li>
+<li>
+Job executions status (completed, on progress, stopped, locked, failed)
+</li>
+<li>
+Number of reports generate per report template
+</li>
+<li>
+Visualize all job executions logs, with the ability to filter on the results
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.3">2.3</a> Non-Functional Requirements
+</h2>
+<div class="Standard">
+Non-functional requirements detail constraints, targets or control mechanisms for a given system. They describe how, how well or to what standard a function should be provided. For example, levels of required service such as response times; security and access requirements; technical constraints; required interfacing with users’ and other systems.<span class="bibcites">[<a class="bibliocite" name="cite-4" href="#biblio-4"><span class="bib-Sur">Com</span><span class="bib-YY">10</span></a>]</span>
+</div>
+<div class="Standard">
+In addition to the features and functions that the system will provide, this application needs to satisfy various Non-Functional Requirements:
+</div>
+<ul>
+<li>
+Security: <br>
+Unauthorized access to the system and its data is not allowed. Only authenticated users can perform an operation, such as creating a new job, launching a job, or viewing job execution.
+</li>
+<li>
+Scalability<br>
+The application is part of a SAAS platform, thus scalability is a must. This module is built with a microservice architecture in mind, so scalability came predefined.
+</li>
+<li>
+Performance<br>
+Batch jobs requires some important amounts of computational power, execution should be seamless, response time of the application must not bother the user in any way.
+</li>
+<li>
+Event-driven<br>
+Job executions might take too long to finish, so executions should be event-driven, using the Asynchronous pattern to manage response time and continuous availability when long-running job executions are required to participate in the application process. 
+</li>
+
+</ul>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.4">2.4</a> Requirements’ Modeling
+</h2>
+<div class="Standard">
+For a better understanding of the specification of the required needs of the application, I opted for the realization of some Use Cases Diagrams to have a better understanding of the needs.
+</div>
+<div class="Standard">
+In our solution, we only have one actor, which is the administrator that will launch and monitor all the job batches.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-2.4.1">2.4.1</a> General Use Case Diagram
+</h3>
+<div class="Standard">
+In this section, I will introduce the main functions of our microservice through a use case diagram. The use case diagram defines the expected activities from the administrator with regard to the application.
+</div>
+<div class="Standard">
+<i>Figure-2.1</i> below illustrates the main use case diagram.
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-2.1"> </a><div class="figure">
+<img class="embedded" src="uml/mainusecase.png" alt="figure uml/mainusecase.png" style="width: 387px; max-width: 553px; height: 197px; max-height: 282px;">
+<div class="caption">
+Figure 2.1 Main use case diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Subparagraph">
+Description
+</div>
+<div class="Standard">
+In this pharagraph I will define each use case written in the diagram above, later in this chapter, I will go through each use case in a detailed diagrams. The administrator has to be logged in, in order to execute any action.
+</div>
+<ul>
+<li>
+Manage Job Configurations:<br>
+Managing job configurations consist of creating configurations, by uploading the business jar, specifying different job batch configurations such as the data source, number of retries, etc. 
+</li>
+<li>
+Manage Job Executions:<br>
+The administrator can also manage the job executions, by launching, stopping, restarting jobs, check job histories, download job executions logs, etc.
+</li>
+<li>
+Manage Reports:<br>
+After a job has been finished, the administrator can view the job execution in a detailed downloadable report, that he create its template. He can also check the reports that has been generated during the writing step, if he choose to during the creating of the job configuration. The administrator is the one responsible of creating the report templates, and can even specify the template parameters for the detailed reports.
+</li>
+
+</ul>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-2.4.2">2.4.2</a> Detailed Use Case diagrams
+</h3>
+<div class="Standard">
+As stated in the above paragraph, this section will detail the complex use cases, for a better understanding of the system.
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-2.4.2.1">2.4.2.1</a> Manage Job Configurations
+</h4>
+<div class="Standard">
+<i>Figure-2.1</i> and <i>Table-2.1</i> below represent respectively, the detailed diagram of the Job Configurations Management use case, and its description.
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-2.2"> </a><div class="figure">
+<img class="embedded" src="uml/ManageJobConfigurationDiagram.png" alt="figure uml/ManageJobConfigurationDiagram.png" style="width: 353px; max-width: 706px; height: 153px; max-height: 306px;">
+<div class="caption">
+Figure 2.2 Manage Job Configuration Use Case Diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Table-2.1"> </a><div class="table">
+<div class="center">
+<div class="caption">
+Table 2.1 Manage Job Configuration Use Case Description
+</div>
+<table>
+<tr>
+<td align="center" valign="top">
+Title
+</td>
+<td align="left" valign="top">
+Manage Job Configuration Use Case.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Intention
+</td>
+<td align="left" valign="top">
+Handle the Job Configuration management.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Actors
+</td>
+<td align="left" valign="top">
+Administrator.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Pre-Condition
+</td>
+<td align="left" valign="top">
+Successful authentication.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Sequences Definition
+</td>
+<td align="left" valign="top">
+<div class="PlainVisible">
+<div class="Frameless" style="width: 10cm;">
+<div class="PlainVisible">
+After the administrator is logged in, and after successfully implementing the template jar with his business logic, he can then upload this jar into the platform, when creating a job configuration, where he can also specify several other parameters that would be used when launching a job the uploaded jar. He can edit or delete a job configuration at any given time.
+</div>
+
+</div>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-2.4.2.2">2.4.2.2</a> Manage Job Executions
+</h4>
+<div class="Standard">
+<i>Figure-2.3</i> and <i>Table-2.2</i> below represent respectively, the detailed diagram of the Job Executions Management use case, and its description.
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-2.3"> </a><div class="figure">
+<img class="embedded" src="uml/ManageJobExecutionsDiagram.png" alt="figure uml/ManageJobExecutionsDiagram.png" style="width: 393px; max-width: 786px; height: 249px; max-height: 498px;">
+<div class="caption">
+Figure 2.3 Manage Job Executions Use Case Diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Table-2.2"> </a><div class="table">
+<div class="center">
+<div class="caption">
+Table 2.2 Manage Job Executions Use Case Description
+</div>
+<table>
+<tr>
+<td align="center" valign="top">
+Title
+</td>
+<td align="left" valign="top">
+Manage Job Executions Use Case.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Intention
+</td>
+<td align="left" valign="top">
+Handle the Job Execution management.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Actors
+</td>
+<td align="left" valign="top">
+Administrator.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Pre-Condition
+</td>
+<td align="left" valign="top">
+Successful authentication.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Sequences Definition
+</td>
+<td align="left" valign="top">
+<div class="PlainVisible">
+<div class="Frameless" style="width: 10cm;">
+<div class="PlainVisible">
+
+</div>
+<div class="PlainVisible">
+After creating a job configuration, the administrator can then use this newly created configuration to launch jobs. He can also monitor and manage these job executions at any given time. Managing consist of starting, stopping, restarting a job, a job can fail for any reason, in this case the administrator have the ability to retry this failed job.<br>
+Results of a job execution can be acquired in several ways, from a dashboard containing some important stats to logs and report generation.
+</div>
+
+</div>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-2.4.2.3">2.4.2.3</a> Manage Reports
+</h4>
+<div class="Standard">
+<i>Figure-2.4</i> and <i>Table-2.3</i> below represent respectively, the detailed diagram of the Manage Reports use case, and its description.
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-2.4"> </a><div class="figure">
+<img class="embedded" src="uml/ManageReports.png" alt="figure uml/ManageReports.png" style="width: 397px; max-width: 794px; height: 121px; max-height: 242px;">
+<div class="caption">
+Figure 2.4 Manage Report Use Case Diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Table-2.3"> </a><div class="table">
+<div class="center">
+<div class="caption">
+Table 2.3 Manage Report Use Case Description
+</div>
+<table>
+<tr>
+<td align="center" valign="top">
+Title
+</td>
+<td align="left" valign="top">
+Manage Report Use Case.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Intention
+</td>
+<td align="left" valign="top">
+Handle the Report management.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Actors
+</td>
+<td align="left" valign="top">
+Administrator.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Pre-Condition
+</td>
+<td align="left" valign="top">
+Successful authentication.
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Sequences Definition
+</td>
+<td align="left" valign="top">
+<div class="PlainVisible">
+<div class="Frameless" style="width: 10cm;">
+<div class="PlainVisible">
+For a better understanding of a job execution, an administrator can generate a report, that he created its template. There are two types of reports, Job Execution reports, and specific reports (generated during the writing step). For the latter, the administrator can specify the list of the parameters that would be injected, in contrast to the job execution report, which have a predefined paramters list.
+</div>
+
+</div>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--4"></a>Conclusion
+</h2>
+<div class="Standard">
+In this chapter I went through the functional and non-functional requirements. Moreover, I made an analysis of these requirements by identifying drawing the global Use Case diagram and its description, along with the detailed diagram for each use case. In the next chapter, I’m going to build on top of this analysis, and specify the design of the application.
+</div>
+<div class="Standard">
+<span class="branch">
+<div class="Standard">
+
+</div>
+
+</span>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Left">
+
+</div>
+<div class="Center">
+
+</div>
+<div class="Right">
+<span class="unknown">\thepage</span>
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-3">3</a> Design
+</h1>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--5"></a>Introduction
+</h2>
+<div class="Standard">
+The phrase “software design” means the conception, invention, or contrivance of a scheme for turning a specification for computer software into operational software. Design is the activity that links requirements to coding and debugging. <span class="bibcites">[<a class="bibliocite" name="cite-9" href="#biblio-9"><span class="bib-Sur">McC</span><span class="bib-YY">04</span></a>]</span>
+</div>
+<div class="Standard">
+After a detailed specification of the requirements, we are hereafter capable of elaborating the complete design of the adopted solution. I clarify in this chapter the architecture adopted, followed by a global view of the class diagram. Subsequently, I will draw a sequence diagram showing the optimal execution of our scenario. Eventually, I will end this chapter by presenting the database representation.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.1">3.1</a> Architecture
+</h2>
+<div class="Standard">
+The goal of software architecture is to minimize the human resources required to build and maintain the required system. <span class="bibcites">[<a class="bibliocite" name="cite-8" href="#biblio-8"><span class="bib-Sur">Mar</span><span class="bib-YY">18</span></a>]</span> A well-thought-out architecture is the foundation stone of a successful software, hence the importance of architecture. Accretio architects decided that the Microservices aproch is best suited for their needs, thus, the application I am building will be a piece in the Accretio puzzle.
+</div>
+<div class="Standard">
+Martin Fowler (a pioneer in software development and design related topics, and microservices specifally) defines the microservices architecture as &ldquo;an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery.&rdquo; <span class="bibcites">[<a class="bibliocite" name="cite-6" href="#biblio-6"><span class="bib-Sur">Fow</span><span class="bib-YY">18</span></a>]</span>
+</div>
+<div class="Standard">
+<i>Figure 3.1</i> below represents the overall architecture, with some Accretio microservices, the one outlined in red is the microservice that I am in charge of, basically, most of the communication are done through HTTP, except for the communication betwen the running job, and the BatchWS microservice, which is done in socket to keep the BatchWS updated in real-time whenever the status of the job is changed.<div class="float">
+<a class="Label" name="Figure-3.1"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="images/Architecture.png" alt="figure images/Architecture.png" style="width: 430px; max-width: 1000px; height: 235px; max-height: 548px;">
+
+</div>
+<div class="caption">
+Figure 3.1 Architecture
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.2">3.2</a> Class Diagram
+</h2>
+<div class="Standard">
+Class diagrams are one of the most fundamental diagram types in UML. They are used to capture the static relationships of your software; in other words, how things are put together. Class diagrams use classes and interfaces to capture details about the entities that make up your system and the static relationships between them. <span class="bibcites">[<a class="bibliocite" name="cite-1" href="#biblio-1"><span class="bib-Sur">By </span><span class="bib-YY">05</span></a>]</span>
+</div>
+<div class="Standard">
+<i>Figure 3.2</i> below, represents the structual data, in a class diagram form.
+</div>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Figure-3.2"> </a><div class="figure">
+<div class="left">
+<span class="hspace" style="width: -29mm;"></span><img class="embedded" src="uml/MainClass.png" alt="figure uml/MainClass.png" style="width: 510px; max-width: 1020px; height: 337px; max-height: 675px;">
+
+</div>
+<div class="caption">
+Figure 3.2 Class Diagram
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.3">3.3</a> Sequence Diagrams
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.4">3.4</a> Entity relation diagram
+</h2>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--6"></a>Conclusion
+</h2>
+<a class="toc" name="Nomenclature"></a><h1 class="nomenclature">Nomenclature</h1><div class="Standard">
+<span class="branch">
+<div class="Standard">
+
+</div>
+
+</span>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Left">
+
+</div>
+<div class="Center">
+
+</div>
+<div class="Right">
+<span class="unknown">\thepage</span>
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-4">4</a> Implementation
+</h1>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--7"></a>Introduction
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.1">4.1</a> Development Environment
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.2">4.2</a> Technologies
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.3">4.3</a> Solution
+</h2>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.3.1">4.3.1</a> Spring Batch Steps
+</h3>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.3.2">4.3.2</a> Asynchronous Communication
+</h3>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.3.3">4.3.3</a> Configuration
+</h3>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-4.3.3.1">4.3.3.1</a> System
+</h4>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-4.3.3.2">4.3.3.2</a> Batch
+</h4>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.3.4">4.3.4</a> Report templating &amp; generation
+</h3>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.3.5">4.3.5</a> Logs managment
+</h3>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.4">4.4</a> Overview of the achieved work
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.5">4.5</a> Entity relation diagram
+</h2>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--8"></a>Conclusion
+</h2>
+<a class="toc" name="Nomenclature"></a><h1 class="nomenclature">Nomenclature</h1><div class="Standard">
+<span class="branch">
+<div class="Standard">
+
+</div>
+
+</span>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Left">
+
+</div>
+<div class="Center">
+
+</div>
+<div class="Right">
+<span class="unknown">\thepage</span>
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-5">5</a> TODO
+</h1>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--9"></a>Introduction
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-5.1">5.1</a> Kanban charts
+</h2>
+<h2 class="Section">
+<a class="toc" name="toc-Section-5.2">5.2</a> Perspective
+</h2>
+<h2 class="Section-">
+<a class="toc" name="toc-Section--10"></a>Conclusion
+</h2>
+<a class="toc" name="Nomenclature"></a><h1 class="nomenclature">Nomenclature</h1><div class="Standard">
+<p><br>
+</p>
+
+</div>
+<div class="Left">
+<span class="unknown">\rightmark</span>
+</div>
+<div class="Right">
+
+</div>
+<div class="Standard">
+<h1 class="biblio">
+Bibliography
+</h1>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-1"><span class="bib-Sur">By </span><span class="bib-YY">05</span></a>] </span> <span class="bib-authors">Neil Pitman By Dan Pilone</span>. <span class="bib-title">UML 2.0 in a Nutshell</span>. <span class="bib-year">2005</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-2"><span class="bib-Sur">Ser</span><span class="bib-YY">08</span></a>] </span> <span class="bib-authors">Centers for Medicare & Medicaid Services (CMS) Office of Information Service</span>. <span class="bib-title">Selecting a development approach</span>. <span class="bib-year">2008</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-3"><span class="bib-Sur">AL</span><span class="bib-YY">10</span></a>] </span> <span class="bib-authors">David J. Anderson, Janice Linden-Reed</span>. <span class="bib-title">Getting Started with Kanban for Software Development</span>. <span class="bib-year">2010</span>. <a href="https://dzone.com/refcardz/getting-started-kanban"><span class="bib-url">https://dzone.com/refcardz/getting-started-kanban</span></a>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-4"><span class="bib-Sur">Com</span><span class="bib-YY">10</span></a>] </span> <span class="bib-authors">Higher National Computing</span>. <span class="bib-title">D77F 35: Systems Development: Structured Design Methods</span>. <span class="bib-year">2010</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-5"><span class="bib-Sur">UNI</span><span class="bib-YY">18</span></a>] </span> <span class="bib-authors">INDIANA UNIVERSITY</span>. <span class="bib-title">What is a batch job?</span>. <span class="bib-year">2018</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-6"><span class="bib-Sur">Fow</span><span class="bib-YY">18</span></a>] </span> <span class="bib-authors">Martin Fowler</span>. <span class="bib-title">Microservices a definition of this new architectural term</span>. <span class="bib-year">2018</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-7"><span class="bib-Sur">Ora</span><span class="bib-YY">??</span></a>] </span> <span class="bib-authors">Oracle</span>. <span class="bib-title">JSRs: Java Specification Requests</span>. <span class="bib-year"></span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-8"><span class="bib-Sur">Mar</span><span class="bib-YY">18</span></a>] </span> <span class="bib-authors">Robert C. Martin</span>. <span class="bib-title">Clean Architecture A CRAFTSMANS GUIDE TO SOFTWARE STRUCTURE AND DESIGN</span>. <span class="bib-year">2018</span>.
+</p>
+<p class="biblio">
+<span class="entry">[<a class="biblioentry" name="biblio-9"><span class="bib-Sur">McC</span><span class="bib-YY">04</span></a>] </span> <span class="bib-authors">Steve McConnell</span>. <span class="bib-title">Code Complete 2nd Edition</span>. <span class="bib-year">2004</span>.
+</p>
+
+</div>
+<div class="Standard">
+<p><br>
+</p>
+
+</div>
+<div class="Left">
+Nomenclature
+</div>
+<div class="Right">
+
+</div>
+<div class="Standard">
+<a class="toc" name="Nomenclature"></a><h1 class="nomenclature">Nomenclature</h1>
+</div>
+
+</div>
+</body>
+</html>
