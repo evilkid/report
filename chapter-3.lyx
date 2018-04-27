@@ -618,7 +618,7 @@ Use cases allow your model to describe what your system must be able to
  There's one large piece that's missing from this jigsaw; with use cases
  and classes alone, you can't yet model how your system is actually going
  to its job.
- This is where interaction diagrams , and specifically sequence diagrams,
+ This is where interaction diagrams, and specifically sequence diagrams,
  come into play.
 \begin_inset CommandInset citation
 LatexCommand cite

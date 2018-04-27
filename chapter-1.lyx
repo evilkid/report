@@ -337,14 +337,14 @@ Accretio
 
 \begin_layout Standard
 Currently, Accretio is an install based application, however, the company
- is actively porting the application to a SAAS (Software as a service) based
- one, with support of multi-tenancy, automatic scaling, etc.
+ is actively porting the application to a SaaS (Software as a Service) based
+ one, with support of multi-tenancy, elasticity, etc.
  Accretio uses the microservice architecture, which makes creating new services,
  and plugin in new services relatively easy.
 \end_layout
 
 \begin_layout Standard
-Advyteam is a young company, established 2011 by three human resources Tunisian
+Advyteam is a young Tunisian company, established 2011 by three human resources
  specialists, its headquarters is situated in Paris, France.
 \end_layout
 
@@ -359,10 +359,10 @@ Project Background
 \end_layout
 
 \begin_layout Standard
-With its effort to port the application to a SAAS software model, the company's
+With its effort to port the application to a SaaS software model, the company's
  engineers have faced several problems, one of these problems is how to
- give the ability to a user of the application to define, launch and monitor
- batch jobs.
+ give the ability an application user to define, launch and monitor batch
+ jobs.
 \end_layout
 
 \begin_layout Standard
@@ -398,7 +398,7 @@ Say we have 2 clients, they both need to generate their employees payrolls,
 Furthermore, each time a client comes up with a new use case for batch processin
 g, or a new business rule to be executed in a batch job, he have to revert
  to the Advyteam developers to write a new specific batch, which could be
- very tedious in a SAAS architecture with tens or hundreds of clients.
+ very tedious in a SaaS architecture with tens or hundreds of clients.
 \end_layout
 
 \begin_layout Standard
@@ -494,8 +494,8 @@ Simple Batch Job Execution Components
 
 \begin_layout Standard
 We need to find out a way where the client can enter his own logic for all
- of the three steps mentioned above, then somehow insert them and execute
- them into our application.
+ of the three steps mentioned above, then somehow insert and execute them
+ into our application.
 \end_layout
 
 \begin_layout Standard
@@ -521,9 +521,9 @@ However this solution mandates that the client expose these RESTful APIs,
 \end_layout
 
 \begin_layout Standard
-Another drawback is this solution would be very inefficient, we would bombard
- the client servers with our calls, and the processing would be done on
- their servers as-well.
+Another drawback is that this solution would be very inefficient, we would
+ bombard the client servers by our calls, and the processing would be done
+ on their servers as-well.
 \end_layout
 
 \begin_layout Standard
@@ -581,7 +581,7 @@ We could also use a rule engine (such as drools), give the client the ability
 
 \begin_layout Standard
 As you can notice, this solution is very limited to the number of possibilities
- that the client can chose from (finite list of rules), and would be able
+ that the client can choose from (finite list of rules), and would be able
  to define very simple and basic operations, simple filtering in the reading
  step, and basic math operations in the processing step.
  
@@ -589,8 +589,7 @@ As you can notice, this solution is very limited to the number of possibilities
 
 \begin_layout Standard
 The client would have no control over the reading and writing step, which
- is another great limitation, and no controls over the data structure to
- be used.
+ is another huge limitation, nor over the data structure to be used.
 \end_layout
 
 \begin_layout Subsection
