@@ -755,6 +755,12 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
+In this chapter I have went through the application architecture, along
+ with a detailed representation of the solution, using class, sequece and
+ activity diagram.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Branch NoChildDocument
 inverted 0
 status collapsed
