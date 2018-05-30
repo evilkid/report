@@ -374,7 +374,7 @@ For the backend, I have used
 \shape italic
 JHipster
 \shape default
- to genrate the microservice skelton, which genrates a 
+ to generate the microservice skeleton, which generates a 
 \shape italic
 Spring Boot Application
 \shape default
@@ -388,7 +388,7 @@ Spring Cloud
 \shape italic
 Spring Framework
 \shape default
- for Dependancy Injection, 
+ for Dependency Injection, 
 \shape italic
 Spring Security
 \shape default
@@ -427,7 +427,7 @@ Angular 4
 \shape italic
 PrimeNG
 \shape default
-, that provided serveral out-of-the-box UI components.
+, that provided several out-of-the-box UI components.
 \end_layout
 
 \begin_layout Standard
@@ -437,7 +437,7 @@ Kafka
 \shape default
  was used as the broker for our asynchronous messages, along with the 
 \shape italic
-avro
+Avro
 \shape default
  serialization framework.
 \end_layout
@@ -459,7 +459,7 @@ Solution
 \begin_layout Standard
 The following section will contain detailed information about the adopted
  solution, starting by spring batch integration, listing the different configura
-tion possible, a walk-through of the reporting engine and logs managment.
+tion possible, a walk-through of the reporting engine and logs management.
  Finally, I'll take a few screenshots representing the final outcome.
 \end_layout
 
@@ -468,23 +468,27 @@ Spring Batch Steps
 \end_layout
 
 \begin_layout Standard
-As described in the first chapter, the solution is composed of serveral
- steps, some steps are defined by the customer, while others are pre-written.
+As described in the first chapter, the solution is composed of several steps,
+ some steps are defined by the customer, while others are pre-coded.
  I have divided the solution into two steps:
 \end_layout
 
 \begin_layout Itemize
 A step for reading the employees population, and store them into a temporary
- database, this step is itself divided into 3 other phases following ETL
- (Extract, Transform and Load) style:
+ database, this step is itself divided into 3 other phases following the
+ ETL (Extract, Transform and Load) style:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Reading phase (Extracting): This is where the client bussiness logic is
- injected, he can chose from three datasource types: JDBC, File (Excel,
- CSV, ...) and a messaging queue.
- The expected output of this phase is a list of registration numbers.
+Reading phase (Extracting): This is where the client business logic (for
+ reading) is injected, when configuring the job, he can chose from three
+ datasource types: JDBC, File (Excel, CSV, ...) and a messaging queue.
+ Upon executing the reading method, the datasource would be built (using
+ the configuration that the client has setup), and given to the client to
+ be used in his implementation.The expected output of this phase is a list
+ of registration numbers for the employees that would be processed by the
+ batch.
 \end_layout
 
 \begin_layout Itemize
@@ -499,11 +503,94 @@ Writing Phase (Load): At the end, we need to store the processed population
  this data to the next step, and the second is a to lock that population
  so that future jobs cannot access it and also to check if it is already
  locked.
- In that case, the whole job would be marked as Locked, and is requeued
+ In that case, the whole job would be marked as Locked, and is re-queued
  until to lock is released.
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+A step for processing the employees that have been read by the first step,
+ same as the previous one, it is divided into 3 phases:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Reading phase: Reads the registration numbers that would be process off
+ of the temporary database.
+\end_layout
+
+\begin_layout Itemize
+Processing phase: This is the most essential part of the batch implementation.
+ This is where the processing is done and where the client processing business
+ logic is injected.
+ The input that has been read in the previous phase is used as an input,
+ while the output is totally set and controlled by the client.
+\end_layout
+
+\begin_layout Itemize
+Writing phase: This phase is also handled by the client, after the processing
+ phase is finished, the client can chose to manipulate the data as he wishes
+ to, such as storing it into file system, save logs, etc.
+ In addition to that, the client is provided with a rich templating engine,
+ where he can generate for each processed employee a report, with a template
+ of his choosing.
+ This report would be save into our system, and can be viewed/downloaded
+ at demand.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\shape italic
+Figure 4.1
+\shape default
+ below (taken from 
+\shape italic
+chapter 1
+\shape default
+) provide more insight to the solution, and detailing the work flow of the
+ inputs and outpus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/BatchSolution.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Graphical Representation of the Solution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Asynchronous Communication
 \end_layout
@@ -525,7 +612,7 @@ Report templating & generation
 \end_layout
 
 \begin_layout Subsection
-Logs managment
+Logs management
 \end_layout
 
 \begin_layout Section
