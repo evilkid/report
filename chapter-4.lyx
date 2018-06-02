@@ -595,20 +595,294 @@ Graphical Representation of the Solution
 Asynchronous Communication
 \end_layout
 
+\begin_layout Standard
+There is a limit on how many Job Batches that can run simultaneously, limitation
+s are both technical and functional.
+ Batches are resource demanding tasks, running too many jobs would result
+ in a very slow system response time, or even system failure.
+ Functionally, jobs that share the same population cannot run concurrently.
+ Therefore I used a queue (Kafka), to queue the job execution demands, I
+ also control how many concurrent job the system could run, by specifying
+ the number of Kafka consumer threads.
+ Job executions that are queued are of two types: new execution and restarting
+ a stopped, failed or locked execution.
+ 
+\end_layout
+
+\begin_layout Standard
+As stated in the first section of this chapter, I am using Avro serialization
+ system with Kafka, to serialize and deserialize the queued events.
+\end_layout
+
+\begin_layout Standard
+Apache Kafka was chosen for its highly distributed, partitioned and replicated
+ architecture, which would fit best with our SaaS model.
+ Kafka was designed with distribution in mind, unlike other Asynchronous
+ Communication systems, which makes it scalable, elastic and resilient.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Figure 4.2
+\shape default
+ below, shows a comparison between Apache Kafka and some other well known
+ brokers.
+ As represented in the figure, Kafka can handle up to 35000 messages per
+ second which is almost the double capacity of the HornetQ.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/kakfka_rabbitmq_other_performance.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kafka Performance vs others 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KAFKA"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kafka was also used for its great support with Spring, works on JVM, and
+ for its matureness, Kafka is 6 years old, and used by major IT companies.
+\end_layout
+
+\begin_layout Standard
+As for the Avro, it was chosen for mainly two aspect (the serilized object
+ that would be send to kafka is called datum):
+\end_layout
+
+\begin_layout Itemize
+Schema Evlotion: When Serilizeing or Deserilizing, avro uses a pre-defined
+ schema, however, avro support schema evlotion (missing, extra or modified
+ fields)
+\end_layout
+
+\begin_layout Itemize
+Untagged Data: The format of an Avro datum is binary, unlike other format
+ such as JSON or XML, the datum is written without overhead describing each
+ field length or type, instead these information are extracted from the
+ schema.
+ This process renders the size of the datum extremely small.
+\end_layout
+
 \begin_layout Subsection
 Configuration
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
+The requirement was to externlize as much configuration as possible, without
+ having to change the code and re-compile the whole microservices.
+ Consequently, I have divided the configuration into two types, 
+\begin_inset Quotes eld
+\end_inset
+
 System
+\begin_inset Quotes erd
+\end_inset
+
+ configuration which controls serveral variables of the microservice, and
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Batch
+\begin_inset Quotes erd
+\end_inset
+
+ configuration that defines the variables required to run a job.
+ Next I will list all the properties for each configuration type:
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Itemize
+Sytem
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+uploaddir: Dirctory where all user uploaded files resides (Reports, Data
+ files, etc)
+\end_layout
+
+\begin_layout Itemize
+dirjar: Directory where all user uploaded jars resides
+\end_layout
+
+\begin_layout Itemize
+dirbatchrunner: Location of the Batch Runner jar
+\end_layout
+
+\begin_layout Itemize
+launcherthreads: Number of threads for the kafka consumer
+\end_layout
+
+\begin_layout Itemize
+logsdir: Places where all the batch logs are saved to.
+\end_layout
+
+\begin_layout Itemize
+kafka:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+topic: The name of the kafka topic to be used
+\end_layout
+
+\begin_layout Itemize
+host: The hostname of the kafka broker
+\end_layout
+
+\begin_layout Itemize
+port: The port for the kafka broker
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
 Batch
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+job
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+name: An unique identifier to represent the name of the job
+\end_layout
+
+\begin_layout Itemize
+scheduled: boolean flag to state whether this job would be scheduled or
+ not
+\end_layout
+
+\begin_layout Itemize
+schedule-time: if the scheduled flag is set to true, this parameter states
+ the time of the excution
+\end_layout
+
+\begin_layout Itemize
+execution-id: when restarting a job, this parameter identify the previous
+ job execution that has been stopped.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+populationId: the ID of the population (in the temporary database) to be
+ used, case of a job restart
+\end_layout
+
+\begin_layout Itemize
+retriable: states if in case of a failure (in any of the steps), the job
+ should retry or not.
+\end_layout
+
+\begin_layout Itemize
+maxretry: number of time to retry until failure
+\end_layout
+
+\begin_layout Itemize
+datasource
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+type: Enum represnts the type of the datasource (JDBC, File, Message)
+\end_layout
+
+\begin_layout Itemize
+driver-class-name: if the type is JDBC, this parameter represent the database
+ driver, currently, we are supporting MySQL
+\end_layout
+
+\begin_layout Itemize
+url: url of the database (hostname, port and schema)
+\end_layout
+
+\begin_layout Itemize
+username: Username of the database
+\end_layout
+
+\begin_layout Itemize
+pasword: Password of the database
+\end_layout
+
+\begin_layout Itemize
+file: if the type is File, this represents the location of the file to be
+ read
+\end_layout
+
+\begin_layout Itemize
+message: if the type is Message:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+host: Represent the hostname of the kafka broker
+\end_layout
+
+\begin_layout Itemize
+port: Port of the kafka broker that is listening to
+\end_layout
+
+\begin_layout Itemize
+topic: Name of the topic to read the data from
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+specific-report-template-id: The id of the template that would be used to
+ generate the specific report for each processed employee
+\end_layout
+
+\begin_layout Itemize
+specific-report-template-type: The type of the document that would be generated
+ (PDF, DOC, HTML)
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Report templating & generation
+\end_layout
+
+\begin_layout Standard
+Another important part of the project is template managing and report generation.
+ Basically we have two types of reports
 \end_layout
 
 \begin_layout Subsection

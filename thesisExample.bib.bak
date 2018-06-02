@@ -2198,7 +2198,7 @@
 
 @Misc{KAFKA,
   author       = {Moin in Technologies},
-  title        = {Apache Kafka v/s RabbitMQ - Message Queue Comparison},
+  title        = {Apache Kafka v/s RabbitMQ – Message Queue Comparison},
   howpublished = {http://www.cloudhack.in/2016/02/29/apache-kafka-vs-rabbitmq/},
   month        = feb,
   year         = {2016},
