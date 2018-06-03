@@ -800,6 +800,10 @@ execution-id: when restarting a job, this parameter identify the previous
  job execution that has been stopped.
 \end_layout
 
+\begin_layout Itemize
+chunk-size: Chunk size to pass to the writer
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 populationId: the ID of the population (in the temporary database) to be
@@ -882,7 +886,131 @@ Report templating & generation
 
 \begin_layout Standard
 Another important part of the project is template managing and report generation.
- Basically we have two types of reports
+ Basically we have two types of reports, a global summary report for a job
+ execution, and a specific report that is generated in the final writing
+ phase, for each processed employee.
+\end_layout
+
+\begin_layout Standard
+The user of the application have total control of what fields, text or even
+ images that would be written in the report, using a powerful templating
+ system.
+ With the help of a document designer, the user can either write or design
+ the report in the web application, or upload a pre-written document to
+ the application, however the uploaded document have to be of ODT format.
+\end_layout
+
+\begin_layout Standard
+The document designer is an open source component, based on the WebODF library
+ (Open Document Format), and is called 
+\begin_inset Quotes eld
+\end_inset
+
+Wodo.TextEditor
+\begin_inset Quotes erd
+\end_inset
+
+.
+ WebODF is a JavaScript library that makes it easy to add Open Document
+ Format (ODF) support to your website and to your mobile or desktop application.
+ It uses HTML and CSS to display ODF documents.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WebODF"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I had several options to chose from for a Rich Text Editor such as QuillJS
+ or CKEditor, however, I ended up choosing is Wodo.TextEditor for its great
+ support for office document, and the user friendly UI that resembles to
+ the popular editors such as Google Docs and Microsoft Office.
+\end_layout
+
+\begin_layout Standard
+Another drawback of the editors like CKEditor, is that they produce HTML
+ and CSS output, the resulting styles and formatting are never consistent,
+ whereas ODT is a standard, and the output is always the same.
+\end_layout
+
+\begin_layout Standard
+After finishing the design of the report template, the user can then add
+ which fields he would like to come up when generating the report.
+ A placeholder is placed in the template, indicating the location of field,
+ during the generation phase, the report is scanned for all the placeholder,
+ and they are automatically replaced with their respected values, as described
+ in 
+\shape italic
+figure 4.3
+\shape default
+ below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/reporting.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reporting Engine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The key difference between a general report and a specific report, is the
+ parameters/fields that are available to use, while in the general report
+ they are known beforehand and listed next to the editor, upon clicking
+ on any variable on that list, it would be placed in the template.
+ However, the specific report does not have a pre-defined list, and the
+ client have to write them up him self.
+ The mapping of the variable to their respective values, is done at the
+ writing phase, where the client have to provide an implementation for the
+ 
+\begin_inset Quotes eld
+\end_inset
+
+getTemplateParamMapping
+\begin_inset Quotes erd
+\end_inset
+
+ method, which should return a map of String (name of the variable) and
+ String (name of the field in the object that have been returned from the
+ processing phase).
+\end_layout
+
+\begin_layout Standard
+I will present screenshots in the section that presents the two editors
+ for the two types of the reports.
 \end_layout
 
 \begin_layout Subsection
