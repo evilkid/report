@@ -549,7 +549,7 @@ Figure 4.1
 chapter 1
 \shape default
 ) provide more insight to the solution, and detailing the work flow of the
- inputs and outpus.
+ inputs and outputs.
 \end_layout
 
 \begin_layout Standard
@@ -680,13 +680,13 @@ Kafka was also used for its great support with Spring, works on JVM, and
 \end_layout
 
 \begin_layout Standard
-As for the Avro, it was chosen for mainly two aspect (the serilized object
- that would be send to kafka is called datum):
+As for the Avro, it was chosen for mainly two aspect (the serialized object
+ that would be send to Kafka is called datum):
 \end_layout
 
 \begin_layout Itemize
-Schema Evlotion: When Serilizeing or Deserilizing, avro uses a pre-defined
- schema, however, avro support schema evlotion (missing, extra or modified
+Schema Evolution: When Serializing or Deserializing, Avro uses a pre-defined
+ schema, however, Avro support schema evolution (missing, extra or modified
  fields)
 \end_layout
 
@@ -703,7 +703,7 @@ Configuration
 \end_layout
 
 \begin_layout Standard
-The requirement was to externlize as much configuration as possible, without
+The requirement was to externalize as much configuration as possible, without
  having to change the code and re-compile the whole microservices.
  Consequently, I have divided the configuration into two types, 
 \begin_inset Quotes eld
@@ -713,7 +713,7 @@ System
 \begin_inset Quotes erd
 \end_inset
 
- configuration which controls serveral variables of the microservice, and
+ configuration which controls several variables of the microservice, and
  
 \begin_inset Quotes eld
 \end_inset
@@ -727,12 +727,12 @@ Batch
 \end_layout
 
 \begin_layout Itemize
-Sytem
+System
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-uploaddir: Dirctory where all user uploaded files resides (Reports, Data
+uploaddir: Directory where all user uploaded files resides (Reports, Data
  files, etc)
 \end_layout
 
@@ -745,7 +745,7 @@ dirbatchrunner: Location of the Batch Runner jar
 \end_layout
 
 \begin_layout Itemize
-launcherthreads: Number of threads for the kafka consumer
+launcherthreads: Number of threads for the Kafka consumer
 \end_layout
 
 \begin_layout Itemize
@@ -753,20 +753,20 @@ logsdir: Places where all the batch logs are saved to.
 \end_layout
 
 \begin_layout Itemize
-kafka:
+Kafka:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-topic: The name of the kafka topic to be used
+topic: The name of the Kafka topic to be used
 \end_layout
 
 \begin_layout Itemize
-host: The hostname of the kafka broker
+host: The hostname of the Kafka broker
 \end_layout
 
 \begin_layout Itemize
-port: The port for the kafka broker
+port: The port for the Kafka broker
 \end_layout
 
 \end_deeper
@@ -792,7 +792,7 @@ scheduled: boolean flag to state whether this job would be scheduled or
 
 \begin_layout Itemize
 schedule-time: if the scheduled flag is set to true, this parameter states
- the time of the excution
+ the time of the execution
 \end_layout
 
 \begin_layout Itemize
@@ -825,7 +825,7 @@ datasource
 
 \begin_deeper
 \begin_layout Itemize
-type: Enum represnts the type of the datasource (JDBC, File, Message)
+type: Enum represents the type of the datasource (JDBC, File, Message)
 \end_layout
 
 \begin_layout Itemize
@@ -842,7 +842,7 @@ username: Username of the database
 \end_layout
 
 \begin_layout Itemize
-pasword: Password of the database
+password: Password of the database
 \end_layout
 
 \begin_layout Itemize
@@ -856,11 +856,11 @@ message: if the type is Message:
 
 \begin_deeper
 \begin_layout Itemize
-host: Represent the hostname of the kafka broker
+host: Represent the hostname of the Kafka broker
 \end_layout
 
 \begin_layout Itemize
-port: Port of the kafka broker that is listening to
+port: Port of the Kafka broker that is listening to
 \end_layout
 
 \begin_layout Itemize
@@ -1040,13 +1040,13 @@ For the system administrator, I have opted to setup and configure an ELK
  system using sockets through Logstash, while the job execution logs are
  first stored in the file system, afterwards, Logstash reads those logs
  and store them in Elasticsearch.
- This way we can retieve the log files for each job execution for the client,
+ This way we can retrieve the log files for each job execution for the client,
  whenever a request is made to view a log file for a particular job execution.
 \end_layout
 
 \begin_layout Standard
 Some Kibana dashboards have been setup for the administrator for fast log
- monistoring.
+ monitoring.
 \end_layout
 
 \begin_layout Section
@@ -1054,7 +1054,7 @@ Overview of the achieved work
 \end_layout
 
 \begin_layout Standard
-In this section, I am going to examone the achieved work through several
+In this section, I am going to examine the achieved work through several
  screenshots of the application, starting with the login page.
 \end_layout
 
@@ -1075,6 +1075,7 @@ status open
 \align left
 \begin_inset Graphics
 	filename images/screenshots/1-login.png
+	lyxscale 40
 	scale 48
 	BoundingBox 160bp 0bp 600bp 600bp
 
@@ -1121,6 +1122,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/screenshots/2-dashboard.png
+	lyxscale 40
 	scale 48
 	BoundingBox 100bp 0bp 0bp 600bp
 
@@ -1154,11 +1156,11 @@ Dashboard interface
 The primary objective of the application, is to configure and monitor job
  execution, so in the figure and figure below, I represent the job configuration
  interface, where the user can enter, the job configuration name, whether
- the job should atempt a retry incase of failure, and for how many times.
+ the job should attempt a retry in case of failure, and for how many times.
  Another option is to schedule the job to be executed at a certain time.
  The user can also instruct the job batch to generate a specific report
  and select which template will be used, and the report type.
- Afterwards, the user have to upload the Jar which contains his bussiness
+ Afterwards, the user have to upload the Jar which contains his business
  logic, and set the datasource.
 \end_layout
 
@@ -1172,6 +1174,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/screenshots/3-jobconfig-part-1.png
+	lyxscale 40
 	scale 48
 	BoundingBox 140bp 0bp 0bp 600bp
 
@@ -1211,6 +1214,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/screenshots/4-jobconfig-part-2.png
+	lyxscale 40
 	scale 48
 	BoundingBox 140bp 0bp 0bp 550bp
 
@@ -1243,7 +1247,7 @@ Creating a Job Configuration 2
 \begin_layout Standard
 After creating the Job Configuration, the user can now launch and monitor
  jobs, he can also control the job by either, stopping it, restart or retry
- the job incase a failure has occured.
+ the job in case a failure has occurred.
  Another feature is he can also download the logs for that job execution.
 \end_layout
 
@@ -1306,6 +1310,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename images/screenshots/5-jobconfig-list-report-corped.png
+	lyxscale 40
 	scale 65
 
 \end_inset
@@ -1346,7 +1351,7 @@ Specific Report
 \end_inset
 
  option, the user will be forwarded to the list of reports that have been
- generated, for each processed employee, with the ablitity to download each
+ generated, for each processed employee, with the ability to download each
  report, as seen in Figure 4.10 below.
 \end_layout
 
@@ -1486,9 +1491,9 @@ General Report Editor
 \end_layout
 
 \begin_layout Standard
-The specific report template is almost identical, except that there ris
- not available parameter list, however, the user have to write his own parameter
-s, which he should specific during the creating of the Jar.
+The specific report template is almost identical, except that there is no
+ available parameter list, however, the user have to write his own parameters,
+ which he should specific during the creating of the Jar.
 \end_layout
 
 \begin_layout Standard
@@ -1501,9 +1506,9 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename images/screenshots/9-report-specific-template-creation.png
-	lyxscale 40
-	scale 48
-	BoundingBox 120bp 0bp 1897bp 515bp
+	lyxscale 38
+	scale 46
+	BoundingBox 120bp 0bp 1897bp 510bp
 
 \end_inset
 
@@ -1578,7 +1583,7 @@ Example of a Generated Report
 \end_layout
 
 \begin_layout Standard
-Furthermore, the user can view the job history is a seperate window, with
+Furthermore, the user can view the job history is a separate window, with
  a more details.
 \end_layout
 
@@ -1638,7 +1643,8 @@ status open
 \begin_inset Graphics
 	filename images/screenshots/11-template-param-category.png
 	lyxscale 40
-	scale 47
+	scale 48
+	BoundingBox 120bp 0bp 0bp 400bp
 
 \end_inset
 
@@ -1677,7 +1683,8 @@ status open
 \begin_inset Graphics
 	filename images/screenshots/12-template-param.png
 	lyxscale 40
-	scale 45
+	scale 48
+	BoundingBox 120bp 0bp 0bp 600bp
 
 \end_inset
 
@@ -1705,8 +1712,59 @@ Managing Report Parameters
 
 \end_layout
 
+\begin_layout Standard
+Finally, we end this section with a Kibana dashboard that represents different
+ logs information.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/13-kibana-dashboard.png
+	lyxscale 40
+	scale 48
+	BoundingBox 140bp 0bp 0bp 550bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A Sample Kibana Dashboard
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Conclusion
+\end_layout
+
+\begin_layout Standard
+In this chapter I gave an overview of the Development Environment, following
+ a detailed description of the solution, and finished the chapter by presenting
+ the work done using several screenshots
 \end_layout
 
 \begin_layout Standard

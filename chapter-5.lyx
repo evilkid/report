@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -60,7 +60,7 @@
 %}
 %\@ifpackageloaded{babel}{\addto\extrasenglish{\refnamechanges}}{\refnamechanges}
 \end_preamble
-\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage
 \use_default_options true
 \master /usr/share/lyx/examples/thesis/thesis.lyx
 \begin_modules
@@ -81,6 +81,8 @@ customHeadersFooters
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -123,6 +125,7 @@ customHeadersFooters
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \branch NoChildDocument
 \selected 0
 \filename_suffix 0
@@ -136,7 +139,11 @@ customHeadersFooters
 \tocdepth 2
 \paragraph_separation skip
 \defskip medskip
-\quotes_language english
+\is_math_indent 1
+\math_indentation default
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancy
@@ -303,7 +310,29 @@ Introduction
 \end_layout
 
 \begin_layout Section
-Kanban charts
+Kanban artefacts
+\end_layout
+
+\begin_layout Subsection
+Cumulatibe Flow Diagram
+\end_layout
+
+\begin_layout Standard
+The Cumulatibe Flow Diagram show the satatues of tasks over time, this indicate
+ the work done during period of time, and show potential bottlenechs that
+ have faced me.
+\end_layout
+
+\begin_layout Subsection
+Control Chart
+\end_layout
+
+\begin_layout Standard
+The control chart is used to study the progress of changes over time.
+\end_layout
+
+\begin_layout Subsection
+Tasks
 \end_layout
 
 \begin_layout Section
@@ -316,6 +345,7 @@ Conclusion
 
 \begin_layout Standard
 \begin_inset Branch NoChildDocument
+inverted 0
 status collapsed
 
 \begin_layout Standard
