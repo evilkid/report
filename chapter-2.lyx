@@ -314,6 +314,7 @@ Introduction
 The first prerequisite you need to fulfill before beginning construction
  (development) is a clear statement of the problem that the system is supposed
  to solve.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CC"
@@ -355,16 +356,16 @@ literal "false"
 
 \begin_layout Standard
 For this project I have opted to use the Kanban method, the main reason
- for this choice is that this project require a lot for researching, and
+ for this choice is that this project requires a lot for researching, and
  many factors are not known beforehand, such which solution will be used,
  what messaging system will be used, and so on.
  
 \end_layout
 
 \begin_layout Standard
-The tasks changes frequently, unplanned features or use cases would be added
+The tasks change frequently, unplanned features or use cases would be added
  on the fly if a valid Proof of Concept was introduced.
- Kanban is suited for these kind of projects.
+ Kanban is suited for these kinds of projects.
 \end_layout
 
 \begin_layout Standard
@@ -372,6 +373,7 @@ Kanban provides a method to continually adapt in order to smooth out kinks
  in the arrival of new development work.
  In this way, it allows the organization to avoid crises and respond more
  quickly and easily to issues that do arise.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "KANBAN"
@@ -407,7 +409,7 @@ Manage Job Configurations:
 \begin_deeper
 \begin_layout Itemize
 Create a Job Configuration by uploading jar file (that contains the client
- business logic), and setting the running configurations.
+ business logic) and setting the running configurations.
 \end_layout
 
 \begin_layout Itemize
@@ -499,6 +501,7 @@ Non-functional requirements detail constraints, targets or control mechanisms
  For example, levels of required service such as response times; security
  and access requirements; technical constraints; required interfacing with
  users' and other systems.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "NONFUNC"
@@ -633,8 +636,8 @@ Description
 \end_layout
 
 \begin_layout Standard
-In this pharagraph I will define each use case written in the diagram above,
- later in this chapter, I will go through each use case in a detailed diagrams.
+In this paragraph I will define each use case written in the diagram above,
+ later in this chapter, I will go through each use case in a detailed diagram.
  The administrator has to be logged in, in order to execute any action.
 \end_layout
 
@@ -664,10 +667,10 @@ Manage Reports:
 \end_inset
 
 After a job has been finished, the administrator can view the job execution
- in a detailed downloadable report, that he create its template.
+ in a detailed downloadable report, that he creates its template.
  He can also check the reports that has been generated during the writing
- step, if he choose to during the creating of the job configuration.
- The administrator is the one responsible of creating the report templates,
+ step, if he chooses to during the creating of the job configuration.
+ The administrator is the one responsible of creating the report templates
  and can even specify the template parameters for the detailed reports.
 \end_layout
 
@@ -867,8 +870,7 @@ status open
 After the administrator is logged in, and after successfully implementing
  the template jar with his business logic, he can then upload this jar into
  the platform, when creating a job configuration, where he can also specify
- several other parameters that would be used when launching a job the uploaded
- jar.
+ several other parameters that would be used when launching a job.
  He can edit or delete a job configuration at any given time.
 \end_layout
 
@@ -1080,7 +1082,7 @@ After creating a job configuration, the administrator can then use this
  newly created configuration to launch jobs.
  He can also monitor and manage these job executions at any given time.
  Managing consist of starting, stopping, restarting a job, a job can fail
- for any reason, in this case the administrator have the ability to retry
+ for any reason, in this case the administrator has the ability to retry
  this failed job.
 \end_layout
 
@@ -1298,7 +1300,7 @@ For a better understanding of a job execution, an administrator can generate
  (generated during the writing step).
  For the latter, the administrator can specify the list of the parameters
  that would be injected, in contrast to the job execution report, which
- have a predefined paramters list.
+ have a predefined parameters list.
 \end_layout
 
 \end_inset

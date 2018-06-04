@@ -132,15 +132,15 @@ adds table of contents entry
 
 \begin_layout Standard
 The purpose of the project was to develop a microservice that manages Job
- Batches, and enable Advyteam client to introduce their business logic into
+ Batches and enable Advyteam clients to introduce their business logic into
  the application, with little or no help from Advyteam support team.
- In addition to generate different reports to help the client have a broader
+ In addition, generate different reports to help the client to have a broader
  overview of the batch status, and easy the create of employees files, such
  as payroll, evaluation cards, etc.
 \end_layout
 
 \begin_layout Standard
-During this report I have tried to summarize the work done during 16 weeks
+During this report I have tried to summarize the work done for 16 weeks
  while working on the application.
  I began the report by presenting the host company under which the project
  has been done.
@@ -151,7 +151,7 @@ During this report I have tried to summarize the work done during 16 weeks
 
 \begin_layout Standard
 The second phase was the analysis and the specification.
- Actually this was fulfilled by detailing the functional and non-functional
+ Actually, this was fulfilled by detailing the functional and non-functional
  requirements.
  Thereafter a formal representation of the needs was demonstrated with the
  help and some use case diagrams.
@@ -165,25 +165,24 @@ After determining the application necessities, I began the design chapter,
 
 \begin_layout Standard
 Following, I described in the implementation chapter the solution in great
- detail, and presented the achieved work with the help of some screenshots.
+ detail and presented the achieved work with the help of some screenshots.
 \end_layout
 
 \begin_layout Standard
-In the end, I presented the kanban artifacts, with the help of a Cumulative
+In the end, I presented the Kanban artifacts, with the help of a Cumulative
  Flow Diagram, Control Chart and the Backlog, and finished the chapter with
  a project perspective.
 \end_layout
 
 \begin_layout Standard
 Personally, this project was very challenging to me, as most the technologies
- I have used was new to me, and had to processed a great amount of information
+ I have used was new to me and had to process a great amount of information
  in such short time, however, it was a very enriching technical experience,
  as much as it was a useful and rewarding exercise of the microservice and
  asynchronous communication worlds.
- Another great advantage of this internship, is that in addition to the
- technical skills I have acquired, I have also learnt a great deal about
- the human resources systems, with a pioneer company such Advyteam in this
- field.
+ Another great advantage of this internship is that in addition to the technical
+ skills I have acquired, I have also learnt a great deal about the human
+ resources systems, with a pioneer company such Advyteam in this field.
 \end_layout
 
 \end_body

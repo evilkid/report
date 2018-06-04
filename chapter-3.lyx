@@ -352,15 +352,15 @@ literal "false"
 
  A well-thought-out architecture is the foundation stone of a successful
  software, hence the importance of architecture.
- Accretio architects decided that the Microservices aproch is best suited
+ Accretio architects decided that the Microservices approach is best suited
  for their needs, thus, the application I am building will be a piece in
  the Accretio puzzle.
 \end_layout
 
 \begin_layout Standard
 Martin Fowler (a pioneer in software development and design related topics,
- and microservices specifally) defines the microservices architecture as
- 
+ and microservices specifically) defines the microservices architecture
+ as 
 \begin_inset Quotes eld
 \end_inset
 
@@ -389,9 +389,9 @@ literal "false"
 Figure 3.1
 \shape default
  below represents the overall architecture, with some Accretio microservices,
- the one outlined in red is the microservice that I am in charge of, basically,
+ the one outlined in red is the microservice that I oversee, basically,
  most of the communication are done through HTTP, except for the communication
- betwen the running job, and the BatchWS microservice, which is done in
+ between the running job, and the BatchWS microservice, which is done in
  socket to keep the BatchWS updated in real-time whenever the status of
  the job is changed.
 \begin_inset Float figure
@@ -456,7 +456,7 @@ literal "false"
 \shape italic
 Figure 3.2
 \shape default
- below, represents the structual data of the application, in a class diagram
+ below, represents the structural data of the application, in a class diagram
  form.
 \end_layout
 
@@ -533,9 +533,9 @@ Job History
 \begin_inset Newline newline
 \end_inset
 
-Whenever a new job is launched, a UUID is generated to define this job exection,
- it is then stored in the job history, in order to track its history, to
- load the population for that specific job exection, or to generate and
+Whenever a new job is launched, a UUID is generated to define this job execution
+, it is then stored in the job history, in order to track its history, to
+ load the population for that specific job execution, or to generate and
  download a report.
 \end_layout
 
@@ -544,7 +544,7 @@ Population
 \begin_inset Newline newline
 \end_inset
 
-Each job execution have its own population (Population in Accretio term,
+Each job execution has its own population (Population in Accretio term,
  is the combination of the employees that would go through the job batch
  process step), this population is populated during the reading step of
  the job batch.
@@ -576,8 +576,8 @@ Report
 \end_inset
 
 The job can generate for each processed employee a report (in case the administr
-ator have stated so during the job config creation), using the Specific
- Report Template and the Template Param.
+ator has stated so during the job config creation), using the Specific Report
+ Template and the Template Param.
  Reports such as an employee payroll, annual evaluation reports, etc.
 \end_layout
 
@@ -620,6 +620,7 @@ Use cases allow your model to describe what your system must be able to
  to its job.
  This is where interaction diagrams, and specifically sequence diagrams,
  come into play.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LUML"
@@ -756,7 +757,7 @@ Conclusion
 
 \begin_layout Standard
 In this chapter I have went through the application architecture, along
- with a detailed representation of the solution, using class, sequece and
+ with a detailed representation of the solution, using class, sequence and
  activity diagram.
 \end_layout
 

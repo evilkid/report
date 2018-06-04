@@ -482,13 +482,13 @@ A step for reading the employees population, and store them into a temporary
 \begin_deeper
 \begin_layout Itemize
 Reading phase (Extracting): This is where the client business logic (for
- reading) is injected, when configuring the job, he can chose from three
+ reading) is injected, when configuring the job, he can choose from three
  datasource types: JDBC, File (Excel, CSV, ...) and a messaging queue.
  Upon executing the reading method, the datasource would be built (using
- the configuration that the client has setup), and given to the client to
- be used in his implementation.The expected output of this phase is a list
- of registration numbers for the employees that would be processed by the
- batch.
+ the configuration that the client has setup) and given to the client to
+ be used in his implementation.
+ The expected output of this phase is a list of registration numbers for
+ the employees that would be processed by the batch.
 \end_layout
 
 \begin_layout Itemize
@@ -529,12 +529,12 @@ Processing phase: This is the most essential part of the batch implementation.
 
 \begin_layout Itemize
 Writing phase: This phase is also handled by the client, after the processing
- phase is finished, the client can chose to manipulate the data as he wishes
+ phase is finished, the client can choose to manipulate the data as he wishes
  to, such as storing it into file system, save logs, etc.
  In addition to that, the client is provided with a rich templating engine,
  where he can generate for each processed employee a report, with a template
  of his choosing.
- This report would be save into our system, and can be viewed/downloaded
+ This report would be save into our system and can be viewed/downloaded
  at demand.
 \end_layout
 
@@ -548,7 +548,7 @@ Figure 4.1
 \shape italic
 chapter 1
 \shape default
-) provide more insight to the solution, and detailing the work flow of the
+) provide more insight to the solution and detailing the work flow of the
  inputs and outputs.
 \end_layout
 
@@ -601,8 +601,8 @@ s are both technical and functional.
  Batches are resource demanding tasks, running too many jobs would result
  in a very slow system response time, or even system failure.
  Functionally, jobs that share the same population cannot run concurrently.
- Therefore I used a queue (Kafka), to queue the job execution demands, I
- also control how many concurrent job the system could run, by specifying
+ Therefore, I used a queue (Kafka), to queue the job execution demands,
+ I also control how many concurrent job the system could run, by specifying
  the number of Kafka consumer threads.
  Job executions that are queued are of two types: new execution and restarting
  a stopped, failed or locked execution.
@@ -626,7 +626,7 @@ Apache Kafka was chosen for its highly distributed, partitioned and replicated
 \shape italic
 Figure 4.2
 \shape default
- below, shows a comparison between Apache Kafka and some other well known
+ below, shows a comparison between Apache Kafka and some other well-known
  brokers.
  As represented in the figure, Kafka can handle up to 35000 messages per
  second which is almost the double capacity of the HornetQ.
@@ -680,7 +680,7 @@ Kafka was also used for its great support with Spring, works on JVM, and
 \end_layout
 
 \begin_layout Standard
-As for the Avro, it was chosen for mainly two aspect (the serialized object
+As for the Avro, it was chosen for mainly two aspects (the serialized object
  that would be send to Kafka is called datum):
 \end_layout
 
@@ -693,8 +693,7 @@ Schema Evolution: When Serializing or Deserializing, Avro uses a pre-defined
 \begin_layout Itemize
 Untagged Data: The format of an Avro datum is binary, unlike other format
  such as JSON or XML, the datum is written without overhead describing each
- field length or type, instead these information are extracted from the
- schema.
+ field length or type, instead this information is extracted from the schema.
  This process renders the size of the datum extremely small.
 \end_layout
 
@@ -723,7 +722,7 @@ Batch
 \end_inset
 
  configuration that defines the variables required to run a job.
- Next I will list all the properties for each configuration type:
+ Next, I will list all the properties for each configuration type:
 \end_layout
 
 \begin_layout Itemize
@@ -732,12 +731,12 @@ System
 
 \begin_deeper
 \begin_layout Itemize
-uploaddir: Directory where all user uploaded files resides (Reports, Data
+uploaddir: Directory where all user uploaded files reside (Reports, Data
  files, etc)
 \end_layout
 
 \begin_layout Itemize
-dirjar: Directory where all user uploaded jars resides
+dirjar: Directory where all user uploaded jars reside
 \end_layout
 
 \begin_layout Itemize
@@ -782,7 +781,7 @@ job
 
 \begin_deeper
 \begin_layout Itemize
-name: An unique identifier to represent the name of the job
+name: A unique identifier to represents the name of the job
 \end_layout
 
 \begin_layout Itemize
@@ -796,7 +795,7 @@ schedule-time: if the scheduled flag is set to true, this parameter states
 \end_layout
 
 \begin_layout Itemize
-execution-id: when restarting a job, this parameter identify the previous
+execution-id: when restarting a job, this parameter identifies the previous
  job execution that has been stopped.
 \end_layout
 
@@ -886,18 +885,18 @@ Report templating & generation
 
 \begin_layout Standard
 Another important part of the project is template managing and report generation.
- Basically we have two types of reports, a global summary report for a job
- execution, and a specific report that is generated in the final writing
+ Basically, we have two types of reports, a global summary report for a
+ job execution, and a specific report that is generated in the final writing
  phase, for each processed employee.
 \end_layout
 
 \begin_layout Standard
-The user of the application have total control of what fields, text or even
+The user of the application has total control of what fields, text or even
  images that would be written in the report, using a powerful templating
  system.
  With the help of a document designer, the user can either write or design
  the report in the web application, or upload a pre-written document to
- the application, however the uploaded document have to be of ODT format.
+ the application, however the uploaded document has to be of ODT format.
 \end_layout
 
 \begin_layout Standard
@@ -926,9 +925,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-I had several options to chose from for a Rich Text Editor such as QuillJS
+I had several options to choose from for a Rich Text Editor such as QuillJS
  or CKEditor, however, I ended up choosing is Wodo.TextEditor for its great
- support for office document, and the user friendly UI that resembles to
+ support for office document, and the user-friendly UI that resembles to
  the popular editors such as Google Docs and Microsoft Office.
 \end_layout
 
@@ -992,9 +991,9 @@ The key difference between a general report and a specific report, is the
  they are known beforehand and listed next to the editor, upon clicking
  on any variable on that list, it would be placed in the template.
  However, the specific report does not have a pre-defined list, and the
- client have to write them up him self.
+ client have to write them up himself.
  The mapping of the variable to their respective values, is done at the
- writing phase, where the client have to provide an implementation for the
+ writing phase, where the client must provide an implementation for the
  
 \begin_inset Quotes eld
 \end_inset
@@ -1020,6 +1019,7 @@ Logs management
 \begin_layout Standard
 Businesses must review their logs daily to search for errors, anomalies,
  or suspicious activity that deviates from the norm.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LOGS"
@@ -1106,10 +1106,10 @@ Login interface
 \end_layout
 
 \begin_layout Standard
-Upon successful login, the user would the be redirected to the dashboard,
+Upon successful login, the user would then be redirected to the dashboard,
  where he can view a set of charts, going from top to right, the number
  of job executions per month, a pie chart representing job status and their
- count and the number of report generated for each template.
+ count, and the number of report generated for each template.
 \end_layout
 
 \begin_layout Standard
@@ -1153,14 +1153,14 @@ Dashboard interface
 \end_layout
 
 \begin_layout Standard
-The primary objective of the application, is to configure and monitor job
+The primary objective of the application is to configure and monitor job
  execution, so in the figure and figure below, I represent the job configuration
  interface, where the user can enter, the job configuration name, whether
  the job should attempt a retry in case of failure, and for how many times.
  Another option is to schedule the job to be executed at a certain time.
  The user can also instruct the job batch to generate a specific report
  and select which template will be used, and the report type.
- Afterwards, the user have to upload the Jar which contains his business
+ Afterwards, the user has to upload the Jar which contains his business
  logic, and set the datasource.
 \end_layout
 
@@ -1398,7 +1398,7 @@ List of Generated Specific Reports
 \end_layout
 
 \begin_layout Standard
-The use can also view the list of general template that he have created,
+The use can also view the list of general templates that he have created,
  the same thing applies for the specific report template, as shown in Figure
  4.11.
 \end_layout
@@ -1492,7 +1492,7 @@ General Report Editor
 
 \begin_layout Standard
 The specific report template is almost identical, except that there is no
- available parameter list, however, the user have to write his own parameters,
+ available parameter list, however, the user has to write his own parameters,
  which he should specific during the creating of the Jar.
 \end_layout
 
