@@ -2204,4 +2204,10 @@
   year         = {2016},
 }
 
+@Misc{WebODF,
+  author       = {KO GmbH},
+  title        = {WebODF},
+  howpublished = {http://webodf.org/},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

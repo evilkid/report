@@ -1017,8 +1017,692 @@ I will present screenshots in the section that presents the two editors
 Logs management
 \end_layout
 
+\begin_layout Standard
+Businesses must review their logs daily to search for errors, anomalies,
+ or suspicious activity that deviates from the norm.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LOGS"
+literal "false"
+
+\end_inset
+
+ Thus we need to provide a way to the client and to our system administrator,
+ to review and check logs.
+ However, we have two types of logs, logs related to the microservice, and
+ the job execution logs.
+\end_layout
+
+\begin_layout Standard
+For the system administrator, I have opted to setup and configure an ELK
+ (Elasticsearch, Logstash, Kibana) stack.
+ The microservice sends the logs to be stored in the Elasticsearch storage
+ system using sockets through Logstash, while the job execution logs are
+ first stored in the file system, afterwards, Logstash reads those logs
+ and store them in Elasticsearch.
+ This way we can retieve the log files for each job execution for the client,
+ whenever a request is made to view a log file for a particular job execution.
+\end_layout
+
+\begin_layout Standard
+Some Kibana dashboards have been setup for the administrator for fast log
+ monistoring.
+\end_layout
+
 \begin_layout Section
 Overview of the achieved work
+\end_layout
+
+\begin_layout Standard
+In this section, I am going to examone the achieved work through several
+ screenshots of the application, starting with the login page.
+\end_layout
+
+\begin_layout Standard
+Once a user has opened the application, he will be prompt with a login modal,
+ Figure 4.4 below represents the login interface.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Graphics
+	filename images/screenshots/1-login.png
+	scale 48
+	BoundingBox 160bp 0bp 600bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Upon successful login, the user would the be redirected to the dashboard,
+ where he can view a set of charts, going from top to right, the number
+ of job executions per month, a pie chart representing job status and their
+ count and the number of report generated for each template.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/2-dashboard.png
+	scale 48
+	BoundingBox 100bp 0bp 0bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dashboard interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The primary objective of the application, is to configure and monitor job
+ execution, so in the figure and figure below, I represent the job configuration
+ interface, where the user can enter, the job configuration name, whether
+ the job should atempt a retry incase of failure, and for how many times.
+ Another option is to schedule the job to be executed at a certain time.
+ The user can also instruct the job batch to generate a specific report
+ and select which template will be used, and the report type.
+ Afterwards, the user have to upload the Jar which contains his bussiness
+ logic, and set the datasource.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/3-jobconfig-part-1.png
+	scale 48
+	BoundingBox 140bp 0bp 0bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Creating a Job Configuration 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/4-jobconfig-part-2.png
+	scale 48
+	BoundingBox 140bp 0bp 0bp 550bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Creating a Job Configuration 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After creating the Job Configuration, the user can now launch and monitor
+ jobs, he can also control the job by either, stopping it, restart or retry
+ the job incase a failure has occured.
+ Another feature is he can also download the logs for that job execution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Graphics
+	filename images/screenshots/5-jobconfig-list.png
+	lyxscale 40
+	scale 48
+	BoundingBox 120bp 0bp 0bp 550bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Job Batch Monitoring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The user can also download or view the general and specific report, from
+ the same interface, which is represented in figure 4.9 below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/screenshots/5-jobconfig-list-report-corped.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Report List
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When selecting the 
+\begin_inset Quotes eld
+\end_inset
+
+Specific Report
+\begin_inset Quotes erd
+\end_inset
+
+ option, the user will be forwarded to the list of reports that have been
+ generated, for each processed employee, with the ablitity to download each
+ report, as seen in Figure 4.10 below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/screenshots/6-jobconfig-report-specific.png
+	lyxscale 40
+	scale 58
+	BoundingBox 50bp 0bp 1920bp 550bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+List of Generated Specific Reports
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The use can also view the list of general template that he have created,
+ the same thing applies for the specific report template, as shown in Figure
+ 4.11.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/screenshots/7-report-template-list.png
+	lyxscale 40
+	scale 52
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+List of Report Template
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 4.12 details how a report template is designed by the user, where
+ he can select which fields would be injected into the generated report,
+ note that the list of parameters can also be edited.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/8-report-template-creation.png
+	lyxscale 40
+	scale 48
+	BoundingBox 120bp 0bp 300bp 450bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+General Report Editor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The specific report template is almost identical, except that there ris
+ not available parameter list, however, the user have to write his own parameter
+s, which he should specific during the creating of the Jar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/9-report-specific-template-creation.png
+	lyxscale 40
+	scale 48
+	BoundingBox 120bp 0bp 1897bp 515bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Specific Report Editor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The resulting report of the previous template when generated looks like
+ the following figure: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/screenshots/14-generated-report.png
+	lyxscale 30
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of a Generated Report
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Furthermore, the user can view the job history is a seperate window, with
+ a more details.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/10-jobconfig-history.png
+	lyxscale 40
+	scale 52
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Job History
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The parameters list of the General Report Template can be configured, by
+ editing two collections, the Parameters Category, and The Parameters, which
+ are shown respectively the figures below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/11-template-param-category.png
+	lyxscale 40
+	scale 47
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Managing Report Parameters Category
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/screenshots/12-template-param.png
+	lyxscale 40
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Managing Report Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
