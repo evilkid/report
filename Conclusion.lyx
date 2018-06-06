@@ -185,5 +185,30 @@ Personally, this project was very challenging to me, as most the technologies
  resources systems, with a pioneer company such Advyteam in this field.
 \end_layout
 
+\begin_layout Subparagraph*
+Perspective
+\end_layout
+
+\begin_layout Standard
+A lot of improvement and new feature can be introduced in this project,
+ however, due to time constraint, I only implemented the most important
+ ones, nevertheless, here is a list of possible features that can be done:
+\end_layout
+
+\begin_layout Itemize
+Create a test suite for the developer how is going to implement the template
+ jar, currently it is a bit hard to test.
+ A spring boot starter can be used to help the developer during testing.
+\end_layout
+
+\begin_layout Itemize
+Add a notification system, to notify the user of upon job status change
+ event, using Email or phone notification.
+\end_layout
+
+\begin_layout Itemize
+Add support for the DOC/DOCX format in the report editor.
+\end_layout
+
 \end_body
 \end_document
