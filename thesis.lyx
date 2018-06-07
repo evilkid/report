@@ -553,6 +553,26 @@ Usually the summary should not have page headers.
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+cleardoublepage
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Branch Summary
 inverted 0
 status open
@@ -598,6 +618,52 @@ status collapsed
 
 \begin_layout Plain Layout
 Reset page style to get page headers again.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Introduction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Introduction
+\end_layout
+
+\end_inset
+
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch introduction
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Introduction.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -659,30 +725,10 @@ rightmark
 
 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Enable page headers and add the chapter to the header line.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Branch introduction
-inverted 0
-status open
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Introduction.lyx"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset

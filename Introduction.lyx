@@ -131,7 +131,108 @@ adds table of contents entry
 \end_layout
 
 \begin_layout Standard
-TODO: Abstract/Summary
+Current Human Resource Management Systems that are available in the market,
+ which had previously practiced by several companies, seemed to be cumbersome,
+ technologically aging, with little focus on data convergence, very expensive
+ to implement, and especially inadequate for the reality of working methods
+ inside modern companies.
+ 
+\end_layout
+
+\begin_layout Standard
+In concrete terms, these software, did not promote for collective intelligence.
+ Today, 73% of employees declare themselves to be disengaged from the company's
+ life.
+ A lack of involvement that costs an average of 126,000€ per year to a private
+ sector company.
+\end_layout
+
+\begin_layout Standard
+This is where Advyteam founders, chose to intervene by creating a powerful
+ human resource management system adequate for all type and sizes of companies,
+ with an enriching experience for both human resource managers, and the
+ employees.
+ They named their product 
+\begin_inset Quotes eld
+\end_inset
+
+Accretio
+\begin_inset Quotes erd
+\end_inset
+
+, which is the Latin word for 
+\begin_inset Quotes eld
+\end_inset
+
+Growth
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Indeed, Accretio help companies to grow by providing four modules:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Core HR:
+\shape default
+ Handles most standard Human Resource functionalities.
+\end_layout
+
+\begin_layout Itemize
+Easy Run: Allow for a full administration of employees (Positions, personal
+ information's, etc).
+\end_layout
+
+\begin_layout Itemize
+Talent: Manages the recruitment process and CV archiving, maps employees'
+ competencies with current internal opening, etc.
+\end_layout
+
+\begin_layout Itemize
+Connect: An internal company social media.
+\end_layout
+
+\begin_layout Standard
+The project presented in this report, will be used to append user specific
+ business logic to each of the modules mentioned above, by providing the
+ client a mean to upload his own custom code into our platform using tools
+ that are provided to him beforehand.
+\end_layout
+
+\begin_layout Standard
+The first chapter will contain a brief introduction of the host company,
+ followed by a detailed description of the problem I am trying to solve
+ and finish the chapter with the proposed solutions, and the one that have
+ been chosen.
+\end_layout
+
+\begin_layout Standard
+Afterwards, I will shift to the analysis and specification of the solution,
+ by determining which development methodology has been used develop the
+ application.
+ The functional and non-functional requirements are presented next, and
+ ending the chapter by introducing some use case diagrams, to further detail
+ requirements.
+\end_layout
+
+\begin_layout Standard
+Throughout the third chapter, I will detail the overall design of the microservi
+ce, by presenting the architecture first, thereafter, the class diagram,
+ sequence diagram of the main senario, and conclude the chapter with an
+ activity diagram.
+\end_layout
+
+\begin_layout Standard
+The final chapter will detail chosen solution, by defining the main aspect
+ of it.
+ Finally, I will present some screenshots showing main features.
+\end_layout
+
+\begin_layout Standard
+Eventually, I will finish by conclusion and a set of suggestion for a possible
+ ways enhance the project.
 \end_layout
 
 \end_body

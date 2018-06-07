@@ -131,7 +131,63 @@ adds table of contents entry
 \end_layout
 
 \begin_layout Standard
-TODO: Abstract/Summary
+Requirements differs from client to client and in a SaaS application you
+ cannot implement all specific requirements of each client, that is why
+ a solution to provide the client to specify his own requirement is needed.
+ In this report I describe how I managed to let any client of our application
+ to introduce his business logic into a job batch, while being able to monitor
+ and manage the job executions in real-time.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Keywords:
+\series default
+ Java, Kafka, Spring Framework, Spring Boot, Spring Batch, Spring Data,
+ Angular, Microservice, SaaS.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size huge
+Résumé
+\end_layout
+
+\begin_layout Standard
+Les besoins diffères d'un client ont autre, et dans une environnement SaaS,
+ on ne peut pas satisfaire tout en mettant en oeuvre tous les besoins de
+ tous les clients.
+ C'est pour ça qu'une solution qui aidera les clients à introduire ces logique
+ métier dans l'application est necessaire.
+ Dans ce rapport je montre comment on peut donner la main au client d'injecté
+ son logique métier dans un job batch, tout en étant capable de gérer et
+ monitorer l'exécutions de ces batches en temps réel.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Keywords:
+\series default
+ Java, Kafka, Spring Framework, Spring Boot, Spring Batch, Spring Data,
+ Angular, Microservice, SaaS.
 \end_layout
 
 \end_body
