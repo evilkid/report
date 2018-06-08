@@ -355,14 +355,14 @@ Besides its Human resource management system Accretio, Advyteam also provides
 \end_layout
 
 \begin_layout Section
-Project Background
+Issue
 \end_layout
 
 \begin_layout Standard
 With its effort to port the application to a SaaS software model, the company's
  engineers have faced several problems, one of these problems is how to
- give the ability an application user to define, launch and monitor batch
- jobs.
+ give the ability to the user of application a way to define, launch and
+ monitor batch jobs.
 \end_layout
 
 \begin_layout Standard
@@ -570,7 +570,7 @@ RESTful APIs Calls Solution Diagram
 \end_layout
 
 \begin_layout Subsection
-Rule Engine
+Rules Engine
 \end_layout
 
 \begin_layout Standard
@@ -594,7 +594,7 @@ The client would have no control over the reading and writing step, which
 \end_layout
 
 \begin_layout Subsection
-JAR Implementation
+Custom Code Injection
 \end_layout
 
 \begin_layout Standard
@@ -608,7 +608,8 @@ literal "false"
 \end_inset
 
 .
- The solution we went for is to create two separate jars: 
+ The solution we went for is to create two separate JARs, a JAR (Java ARchive)
+ is a package file used to aggregate Java class files: 
 \end_layout
 
 \begin_layout Itemize
@@ -635,12 +636,12 @@ Runner jar: Will hold the batch steps definitions and configurations and
 \end_layout
 
 \begin_layout Standard
-After implementing the Template Jar, the client only needs to upload the
- generated Jar, through the frontend application form, and specifies a set
- of options, such the datasource that would be used in the reading step,
- whether the job should be scheduled, number of retries ..., he can then manage
- those jobs, by starting them, stopping, monitoring, view generated reports,
- and so on.
+After implementing the Template JAR, where the custom code will reside,
+ the client only needs to upload the generated JAR, through the frontend
+ application form, and specifies a set of options, such the datasource that
+ would be used in the reading step, whether the job should be scheduled,
+ number of retries ..., he can then manage those jobs, by starting them, stopping,
+ monitoring, view generated reports, and so on.
 \end_layout
 
 \begin_layout Standard

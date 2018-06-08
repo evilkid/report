@@ -402,10 +402,11 @@ status open
 
 \begin_layout Plain Layout
 \noindent
-\align center
+\align left
 \begin_inset Graphics
 	filename images/Architecture.png
 	scale 43
+	BoundingBox 120bp 0bp 1177bp 548bp
 
 \end_inset
 
@@ -424,184 +425,6 @@ Architecture
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Class Diagram
-\end_layout
-
-\begin_layout Standard
-Class diagrams are one of the most fundamental diagram types in UML.
- They are used to capture the static relationships of your software; in
- other words, how things are put together.
- Class diagrams use classes and interfaces to capture details about the
- entities that make up your system and the static relationships between
- them.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "UML"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\shape italic
-Figure 3.2
-\shape default
- below, represents the structural data of the application, in a class diagram
- form.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align left
-\begin_inset space \hspace*{}
-\length -10mm
-\end_inset
-
-
-\begin_inset Graphics
-	filename uml/MainClass.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Class Diagram
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subparagraph
-Description
-\end_layout
-
-\begin_layout Standard
-This class diagram is composed of the following classes: 
-\end_layout
-
-\begin_layout Itemize
-Job Config
-\begin_inset Newline newline
-\end_inset
-
-This is the main class, it holds the job batch configuration, and is used
- to launch the job.
-\end_layout
-
-\begin_layout Itemize
-DataSource
-\begin_inset Newline newline
-\end_inset
-
-This class defines the data source that will be using in a job, it can be
- either file, message queue or a database source, each variation have a
- different set of properties.
-\end_layout
-
-\begin_layout Itemize
-Job History
-\begin_inset Newline newline
-\end_inset
-
-Whenever a new job is launched, a UUID is generated to define this job execution
-, it is then stored in the job history, in order to track its history, to
- load the population for that specific job execution, or to generate and
- download a report.
-\end_layout
-
-\begin_layout Itemize
-Population
-\begin_inset Newline newline
-\end_inset
-
-Each job execution has its own population (Population in Accretio term,
- is the combination of the employees that would go through the job batch
- process step), this population is populated during the reading step of
- the job batch.
- There should be only one job processing an employee (population) at a time,
- therefore, the 
-\begin_inset Quotes eld
-\end_inset
-
-locked
-\begin_inset Quotes erd
-\end_inset
-
- flag is set to true, whenever a job started processing the employee, and
- set it to false when it's done.
-\end_layout
-
-\begin_layout Itemize
-Job Population
-\begin_inset Newline newline
-\end_inset
-
-This class holds the list of populations for a particular job, a whole list
- of population can also be locked.
-\end_layout
-
-\begin_layout Itemize
-Report
-\begin_inset Newline newline
-\end_inset
-
-The job can generate for each processed employee a report (in case the administr
-ator has stated so during the job config creation), using the Specific Report
- Template and the Template Param.
- Reports such as an employee payroll, annual evaluation reports, etc.
-\end_layout
-
-\begin_layout Itemize
-Specific Report Template
-\begin_inset Newline newline
-\end_inset
-
-This class holds a definition for the template that will be used to generate
- reports for the population, this template is wrote by the administrator,
- where he can put the template parameters as a placeholder, and these placeholde
-rs will be replaced by their real values during report generation.
- 
-\end_layout
-
-\begin_layout Itemize
-Report Template
-\begin_inset Newline newline
-\end_inset
-
-Along to the Specific Report, the administrator can also generate reports
- for a whole job execution, however this report is not auto-generated, rather,
- the administrator can generate the report whenever he wishes to.
-\begin_inset Newline newline
 \end_inset
 
 
@@ -641,7 +464,7 @@ Composite structures such as class diagrams, show how and what objects fit
 \begin_layout Standard
 
 \shape italic
-Figure 3.3
+Figure 3.2
 \shape default
  below represent the sequence diagram of the main functionally of the system,
  in an error-free scenario.
@@ -656,15 +479,11 @@ status open
 
 \begin_layout Plain Layout
 \noindent
-\align left
-\begin_inset space \hspace*{}
-\length -17mm
-\end_inset
-
-
+\align center
 \begin_inset Graphics
 	filename uml/SequenceDiagram.png
-	scale 38
+	scale 48
+	rotateAngle 90
 
 \end_inset
 
