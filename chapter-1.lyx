@@ -477,6 +477,13 @@ status open
 
 \begin_layout Plain Layout
 Simple Batch Job Execution Components
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Simple-Batch-Job"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -557,6 +564,13 @@ status open
 
 \begin_layout Plain Layout
 RESTful APIs Calls Solution Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RESTful-APIs-Calls"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -651,7 +665,17 @@ We will go through the job configuration options in details in later chapters.
 \begin_layout Standard
 
 \shape italic
-Figure 1.3
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:JAR-Implementation-Solution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below, shows a visual representation of the solution, note that the squares
  marked in red, represents where the client's business logic will be injected,
@@ -682,6 +706,13 @@ status open
 
 \begin_layout Plain Layout
 JAR Implementation Solution Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:JAR-Implementation-Solution"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

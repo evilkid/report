@@ -542,7 +542,17 @@ Writing phase: This phase is also handled by the client, after the processing
 \begin_layout Standard
 
 \shape italic
-Figure 4.1
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Graphical-Representation-of"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below (taken from 
 \shape italic
@@ -575,6 +585,13 @@ status open
 
 \begin_layout Plain Layout
 Graphical Representation of the Solution
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Graphical-Representation-of"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -624,7 +641,17 @@ Apache Kafka was chosen for its highly distributed, partitioned and replicated
 \begin_layout Standard
 
 \shape italic
-Figure 4.2
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Kafka-Performance-vs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below, shows a comparison between Apache Kafka and some other well-known
  brokers.
@@ -658,6 +685,13 @@ Kafka Performance vs others
 LatexCommand cite
 key "KAFKA"
 literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Kafka-Performance-vs"
 
 \end_inset
 
@@ -945,7 +979,17 @@ After finishing the design of the report template, the user can then add
  and they are automatically replaced with their respected values, as described
  in 
 \shape italic
-figure 4.3
+figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Reporting-Engine"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below.
 \end_layout
@@ -973,6 +1017,13 @@ status open
 
 \begin_layout Plain Layout
 Reporting Engine
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Reporting-Engine"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1060,7 +1111,17 @@ In this section, I am going to examine the achieved work through several
 
 \begin_layout Standard
 Once a user has opened the application, he will be prompt with a login modal,
- Figure 4.4 below represents the login interface.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Login-interface"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ below represents the login interface.
 \end_layout
 
 \begin_layout Standard
@@ -1089,6 +1150,13 @@ status open
 
 \begin_layout Plain Layout
 Login interface
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Login-interface"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1136,6 +1204,13 @@ status open
 
 \begin_layout Plain Layout
 Dashboard interface
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dashboard-interface"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1295,7 +1370,21 @@ Job Batch Monitoring
 
 \begin_layout Standard
 The user can also download or view the general and specific report, from
- the same interface, which is represented in figure 4.9 below.
+ the same interface, which is represented in 
+\shape italic
+figure
+\shape default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Report-List"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ below.
 \end_layout
 
 \begin_layout Standard
@@ -1325,6 +1414,13 @@ status open
 
 \begin_layout Plain Layout
 Report List
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Report-List"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1352,7 +1448,21 @@ Specific Report
 
  option, the user will be forwarded to the list of reports that have been
  generated, for each processed employee, with the ability to download each
- report, as seen in Figure 4.10 below.
+ report, as seen in 
+\shape italic
+figure
+\shape default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:List-of-Generated"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ below.
 \end_layout
 
 \begin_layout Standard
@@ -1381,6 +1491,13 @@ status open
 
 \begin_layout Plain Layout
 List of Generated Specific Reports
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:List-of-Generated"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1400,7 +1517,17 @@ List of Generated Specific Reports
 \begin_layout Standard
 The use can also view the list of general templates that he have created,
  the same thing applies for the specific report template, as shown in Figure
- 4.11.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:List-of-Report"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1428,6 +1555,13 @@ status open
 
 \begin_layout Plain Layout
 List of Report Template
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:List-of-Report"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1445,9 +1579,23 @@ List of Report Template
 \end_layout
 
 \begin_layout Standard
-Figure 4.12 details how a report template is designed by the user, where
- he can select which fields would be injected into the generated report,
- note that the list of parameters can also be edited.
+
+\shape italic
+Figure
+\shape default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:General-Report-Editor"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ details how a report template is designed by the user, where he can select
+ which fields would be injected into the generated report, note that the
+ list of parameters can also be edited.
 \end_layout
 
 \begin_layout Standard
@@ -1474,6 +1622,13 @@ status open
 
 \begin_layout Plain Layout
 General Report Editor
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:General-Report-Editor"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

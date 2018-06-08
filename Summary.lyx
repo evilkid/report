@@ -171,14 +171,13 @@ Résumé
 \end_layout
 
 \begin_layout Standard
-Les besoins diffères d'un client ont autre, et dans une environnement SaaS,
- on ne peut pas satisfaire tout en mettant en oeuvre tous les besoins de
- tous les clients.
- C'est pour ça qu'une solution qui aidera les clients à introduire ces logique
- métier dans l'application est necessaire.
- Dans ce rapport je montre comment on peut donner la main au client d'injecté
- son logique métier dans un job batch, tout en étant capable de gérer et
- monitorer l'exécutions de ces batches en temps réel.
+Les besoins diffères d’un client a un autre, et dans une environnement SaaS,
+ on ne peut pas satisfaire tous les besoins de tous les clients.
+ C’est pour ça qu’une solution qui aidera les clients à introduire leurs
+ logique métier dans l’application est nécessaire.
+ Dans ce rapport, je montre comment on peut donner la main au client pour
+ injecter sa logique métier dans un job batch, tout en étant capable de
+ gérer et superviser l’exécution de ces batches en temps réel.
 \end_layout
 
 \begin_layout Standard

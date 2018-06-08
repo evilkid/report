@@ -413,7 +413,7 @@ Cumulative Flow Diagram
 \end_layout
 
 \begin_layout Standard
-The Cumulative Flow Diagram show the statues of tasks over time, this indicate
+The Cumulative Flow Diagram show the statuses of tasks over time, this indicate
  the work done during period of time, and show potential bottlenecks that
  have faced me.
 \end_layout
@@ -2934,7 +2934,17 @@ In this section, I will introduce the main functions of our microservice
 \begin_layout Standard
 
 \shape italic
-Figure-2.1
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Main-use-case"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below illustrates the main use case diagram.
 \end_layout
@@ -2961,6 +2971,13 @@ status open
 
 \begin_layout Plain Layout
 Main use case diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Main-use-case"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3036,11 +3053,31 @@ Manage Job Configurations
 \begin_layout Standard
 
 \shape italic
-Figure-2.1
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Manage-Job-Configuration"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  and 
 \shape italic
-Table-2.1
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Manage-Job-Configuration"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below represent respectively, the detailed diagram of the Job Configurations
  Management use case, and its description.
@@ -3065,6 +3102,13 @@ status open
 
 \begin_layout Plain Layout
 Manage Job Configuration Use Case Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Manage-Job-Configuration"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3090,6 +3134,13 @@ status open
 
 \begin_layout Plain Layout
 Manage Job Configuration Use Case Description
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Manage-Job-Configuration"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3247,11 +3298,31 @@ Manage Job Executions
 \begin_layout Standard
 
 \shape italic
-Figure-2.3
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Manage-Job-Executions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  and 
 \shape italic
-Table-2.2
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Manage-Job-Executions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below represent respectively, the detailed diagram of the Job Executions
  Management use case, and its description.
@@ -3276,6 +3347,13 @@ status open
 
 \begin_layout Plain Layout
 Manage Job Executions Use Case Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Manage-Job-Executions"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3301,6 +3379,13 @@ status open
 
 \begin_layout Plain Layout
 Manage Job Executions Use Case Description
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Manage-Job-Executions"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3464,11 +3549,31 @@ Manage Reports
 \begin_layout Standard
 
 \shape italic
-Figure-2.4
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Manage-Report-Use"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  and 
 \shape italic
-Table-2.3
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Manage-Report-Use"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below represent respectively, the detailed diagram of the Manage Reports
  use case, and its description.
@@ -3492,6 +3597,13 @@ status open
 
 \begin_layout Plain Layout
 Manage Report Use Case Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Manage-Report-Use"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3517,6 +3629,13 @@ status open
 
 \begin_layout Plain Layout
 Manage Report Use Case Description
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Manage-Report-Use"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3694,7 +3813,17 @@ literal "false"
 \begin_layout Standard
 
 \shape italic
-Figure 2.7
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Class-Diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below, represents the structural data of the application, in a class diagram
  form.
@@ -3729,6 +3858,13 @@ status open
 
 \begin_layout Plain Layout
 Class Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Class-Diagram"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

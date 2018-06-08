@@ -310,10 +310,7 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-The phrase “software design” means the conception, invention, or contrivance
- of a scheme for turning a specification for computer software into operational
- software.
- Design is the activity that links requirements to coding and debugging.
+Design is the activity that links requirements to coding and debugging.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -386,7 +383,17 @@ literal "false"
 \begin_layout Standard
 
 \shape italic
-Figure 3.1
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Architecture"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below represents the overall architecture, with some Accretio microservices,
  the one outlined in red is the microservice that I oversee, basically,
@@ -405,9 +412,45 @@ status open
 \align left
 \begin_inset Graphics
 	filename images/Architecture.png
-	scale 43
+	scale 55
 	BoundingBox 120bp 0bp 1177bp 548bp
+	rotateAngle 90
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
 \end_inset
 
 
@@ -418,10 +461,87 @@ status open
 
 \begin_layout Plain Layout
 Architecture
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Architecture"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Package Diagram
+\end_layout
+
+\begin_layout Standard
+To further understand the system as a whole, while omitting the use of a
+ complexe conceptual class diagram, I have opted to illustare the system
+ using a package diagram as shown in 
+\shape italic
+Figure
+\shape default
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Package-Diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename uml/packagediagram.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Package Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Package-Diagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -464,7 +584,17 @@ Composite structures such as class diagrams, show how and what objects fit
 \begin_layout Standard
 
 \shape italic
-Figure 3.2
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sequence-Diagram"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below represent the sequence diagram of the main functionally of the system,
  in an error-free scenario.
@@ -495,6 +625,13 @@ status open
 
 \begin_layout Plain Layout
 Sequence Diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sequence-Diagram"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -525,7 +662,17 @@ Activity Diagram
 \begin_layout Standard
 To illustrate the life cycle of a job, I have opted in 
 \shape italic
-Figure 3.4
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Activity-Diagram-Job"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \shape default
  below, to use an activity diagram that shows the different status a job
  can have.
@@ -554,6 +701,13 @@ status open
 
 \begin_layout Plain Layout
 Activity Diagram Job Life Cycle
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Activity-Diagram-Job"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
