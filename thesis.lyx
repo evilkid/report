@@ -179,6 +179,11 @@ enumitem
 \filename_suffix 0
 \color #faf0e6
 \end_branch
+\branch acknowledgments
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -280,6 +285,26 @@ OUERGHI Yassine
 
 \begin_layout Dedication
 To all ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch acknowledgments
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Acknowledgments.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
