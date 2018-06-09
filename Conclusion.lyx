@@ -135,7 +135,7 @@ The purpose of the project was to develop a microservice that manages Job
  Batches and enable Advyteam clients to introduce their business logic into
  the application, with little or no help from Advyteam support team.
  In addition, generate different reports to help the client to have a broader
- overview of the batch status, and easy the create of employees' files,
+ overview of the batch status, and ease the creation of employees' files,
  such as payroll, evaluation cards, etc.
 \end_layout
 
@@ -145,16 +145,16 @@ During this report I have tried to summarize the work done for 16 weeks
  I began the report by presenting the host company under which the project
  has been done.
  An overview of the project background was then presented, and finished
- the chapter with the different proposed solutions, and the reasons for
+ the chapter with the different proposed solutions, and the arguments for
  the chosen solution.
 \end_layout
 
 \begin_layout Standard
-The second phase was the analysis and the specification.
+The second phase was the analysis of the requirements.
  Actually, this was fulfilled by detailing the functional and non-functional
  requirements.
  Thereafter a formal representation of the needs was demonstrated with the
- help and some use case diagrams.
+ help and some use case diagrams and an analysis class diagram.
 \end_layout
 
 \begin_layout Standard
@@ -166,12 +166,6 @@ After determining the application requirements, I began the design chapter,
 \begin_layout Standard
 Following, I described in the implementation chapter the solution in great
  detail and presented the achieved work with the help of some screenshots.
-\end_layout
-
-\begin_layout Standard
-In the end, I presented the Kanban artifacts, with the help of a Cumulative
- Flow Diagram, Control Chart and the Backlog, and finished the chapter with
- a project perspective.
 \end_layout
 
 \begin_layout Standard
@@ -211,7 +205,7 @@ literal "false"
 
 \begin_layout Standard
 The second bug that I have encountered was in Spring Integration project,
- where a Deserializer class behaved abnormally and cause unclear exceptions,
+ where a Deserializer class behaved abnormally and caused unclear exceptions,
  the bug was also reported, and thanks to the active spring community, an
  alternative solution was proposed, and the bug was fixed in preceding version.
 \begin_inset CommandInset citation

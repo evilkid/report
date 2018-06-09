@@ -1138,7 +1138,7 @@ status open
 	filename images/screenshots/1-login.png
 	lyxscale 40
 	scale 48
-	BoundingBox 160bp 0bp 600bp 600bp
+	BoundingBox 150bp 0bp 600bp 600bp
 
 \end_inset
 

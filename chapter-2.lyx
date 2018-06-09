@@ -328,7 +328,8 @@ literal "true"
 \begin_layout Standard
 In this chapter, I will describe the adopted methodology along with the
  functional requirements and non-functional requirements.
- Lastly, I will present the system actors and use cases.
+ Lastly, I will present the system actors and use cases, and finish with
+ a class diagram.
 \end_layout
 
 \begin_layout Section
@@ -3991,7 +3992,8 @@ Conclusion
 In this chapter I went through the functional and non-functional requirements.
  Moreover, I made an analysis of these requirements by identifying drawing
  the global Use Case diagram and its description, along with the detailed
- diagram for each use case.
+ diagram for each use case and an overview of the system using an analysis
+ class diagram.
  In the next chapter, I’m going to build on top of this analysis, and specify
  the design of the application.
 \end_layout

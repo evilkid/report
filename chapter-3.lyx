@@ -326,10 +326,11 @@ literal "false"
 After a detailed specification of the requirements, we are hereafter capable
  of elaborating the complete design of the adopted solution.
  I clarify in this chapter the architecture adopted, followed by a global
- view of the class diagram.
+ view of the system using a package diagram.
  Subsequently, I will draw a sequence diagram showing the optimal execution
  of our scenario.
- Eventually, I will end this chapter by presenting the database representation.
+ Eventually, I will end this chapter by presenting the life-cycle of a job
+ with an acticity diagram.
 \end_layout
 
 \begin_layout Section
@@ -730,8 +731,8 @@ Conclusion
 
 \begin_layout Standard
 In this chapter I have went through the application architecture, along
- with a detailed representation of the solution, using class, sequence and
- activity diagram.
+ with a detailed representation of the solution, using package, sequence
+ and an activity diagram.
 \end_layout
 
 \begin_layout Standard
