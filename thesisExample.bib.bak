@@ -2210,4 +2210,23 @@
   howpublished = {http://webodf.org/},
 }
 
+@Misc{LOGS,
+  author       = {Gary Glover},
+  title        = {The Importance of Log Management},
+  howpublished = {http://blog.securitymetrics.com/2015/08/importance-of-log-management.html},
+  month        = aug,
+  year         = {2016},
+}
+
+@Misc{BATCH-2667,
+  howpublished = {https://jira.spring.io/browse/BATCH-2667},
+}
+
+@Misc{,
+}
+
+@Misc{INT-4374,
+  howpublished = {https://jira.spring.io/browse/INT-4374},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
