@@ -308,6 +308,74 @@ filename "Acknowledgments.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Usually the summary should not have page headers.
+ If it should, remove this \SpecialChar TeX
+ code.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+cleardoublepage
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch Summary
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Summary.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
@@ -539,81 +607,6 @@ cleardoublepage
 clearpage 
 \backslash
 listoftables} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage cleardoublepage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-pagestyle{plain}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Usually the summary should not have page headers.
- If it should, remove this \SpecialChar TeX
- code.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-let
-\backslash
-cleardoublepage
-\backslash
-clearpage
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Branch Summary
-inverted 0
-status open
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Summary.lyx"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
